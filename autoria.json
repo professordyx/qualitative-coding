@@ -1,0 +1,16 @@
+{
+  "nomeCompleto": "Diocélio Goulart",
+  "titulacao": "Pesquisador de doutorado em Administração (foco em IA, transformação digital e modelos preditivos)",
+  "afiliacao": "[PREENCHER: Programa de Pós-Graduação / Instituição]",
+  "email": "diocelio@bluestars.com.br",
+  "orcid": "[PREENCHER: 0000-0000-0000-0000]",
+  "lattes": "[PREENCHER: http://lattes.cnpq.br/...]",
+  "linkedin": "[PREENCHER: https://www.linkedin.com/in/...]",
+  "site": "",
+  "cidadePais": "[PREENCHER: Cidade, País]",
+  "bio": "Diocélio Goulart é pesquisador de doutorado em Administração, com ênfase em inteligência artificial, transformação digital e modelos preditivos. Investiga transformação digital e inovação aberta em grupos econômicos, articulando pesquisa acadêmica e prática de consultoria (pesquisa-ação). [PREENCHER/AJUSTAR conforme desejado.]",
+  "papelAutoria": "Concepção metodológica, curadoria analítica e autoria dos relatórios. A codificação foi assistida por modelo de linguagem (Claude) e submetida integralmente à revisão e à decisão do autor.",
+  "versao": "1.0",
+  "licenca": "CC BY 4.0",
+  "anexoObs": "Campos entre [PREENCHER] devem ser editados por Diocélio Goulart. Após editar, regenere os documentos com: node run_all.js"
+}

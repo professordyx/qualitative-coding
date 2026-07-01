@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "Se você usar este material, por favor cite-o como abaixo."
+title: "Codificação e análise qualitativa da entrevista — estudo de caso Acelera Ventures / Grupo Oscar (transformação digital e inovação aberta)"
+abstract: >-
+  Codificação qualitativa assistida por LLM (com revisão humana) de uma entrevista
+  semiestruturada, aplicando cinco enquadramentos — dedutivo, indutivo, GATOS,
+  CollabCoder e Bardin — sobre um codebook de 37 códigos de transformação digital
+  e inovação aberta.
+type: dataset
+authors:
+  - family-names: "Goulart"
+    given-names: "Diocélio"
+    email: "diocelio@bluestars.com.br"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # PREENCHER
+    # affiliation: ""                                    # PREENCHER
+version: "1.0.0"
+date-released: "2026-07-01"
+license: "CC-BY-4.0"
+keywords:
+  - "análise qualitativa"
+  - "codificação qualitativa"
+  - "inovação aberta"
+  - "transformação digital"
+  - "corporate venture capital"
+  - "Bardin"
+  - "GATOS"
+  - "CollabCoder"
+  - "Kappa de Cohen"

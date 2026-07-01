@@ -1,0 +1,20 @@
+# Node
+node_modules
+npm-debug.log*
+package-lock.json
+
+# Artefatos de renderização temporários
+*.pdf
+*.jpg
+*.jpeg
+*.png
+!reports/*.png
+build/
+chk/
+check*/
+*.tmp
+
+# Dados sensíveis — NÃO versionar a transcrição bruta
+*transcript*.txt
+*transcricao*.txt
+uploads/

@@ -1,0 +1,9 @@
+{
+  "name": "codificacao-acelera-ventures",
+  "version": "1.0.0",
+  "description": "Codificacao e analise qualitativa (dedutivo, indutivo, GATOS, CollabCoder, Bardin) de entrevista - estudo de caso Acelera Ventures / Grupo Oscar.",
+  "author": "Diocelio Goulart <diocelio@bluestars.com.br>",
+  "license": "CC-BY-4.0",
+  "scripts": { "build": "node run_all.js" },
+  "dependencies": { "docx": "^9.0.0" }
+}

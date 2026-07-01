@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagrama de Resultados — Codificação Qualitativa | Acelera Ventures</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --ink:#16233a; --accent:#1f4e79; --accent2:#2e75b6; --accent3:#5b9bd5;
+  --bg:#f4f6fb; --card:#ffffff; --line:#e2e8f3; --muted:#5b6b85;
+  --good:#1e8e6a; --warn:#c98a1b; --bad:#b4472e;
+  --grad:linear-gradient(135deg,#1f4e79 0%,#2e75b6 100%);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.5}
+header.top{background:var(--grad);color:#fff;padding:34px 26px 30px}
+header.top .wrap{max-width:1180px;margin:0 auto}
+header.top .kick{font-size:13px;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+header.top h1{margin:6px 0 4px;font-size:30px;font-weight:700;letter-spacing:-.01em}
+header.top p{margin:2px 0;opacity:.92;font-size:15px;max-width:880px}
+.tagrow{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;padding:5px 13px;font-size:12.5px;font-weight:600}
+main{max-width:1180px;margin:0 auto;padding:26px 22px 60px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:6px 0 26px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;
+  box-shadow:0 1px 3px rgba(20,40,80,.05)}
+.kpi .v{font-size:30px;font-weight:800;color:var(--accent);line-height:1}
+.kpi .l{font-size:12.5px;color:var(--muted);margin-top:6px;font-weight:600}
+.kpi .s{font-size:11.5px;color:#90a0bb;margin-top:2px}
+section.card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:22px 24px;margin:0 0 22px;box-shadow:0 1px 3px rgba(20,40,80,.05)}
+section.card h2{margin:0 0 4px;font-size:20px;color:var(--accent)}
+section.card .sub{color:var(--muted);font-size:13.5px;margin:0 0 18px}
+.grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:start}
+.chartbox{position:relative;height:330px}
+.chartbox.tall{height:420px}
+.legendnote{font-size:12.5px;color:var(--muted);margin-top:10px}
+/* flow diagram */
+.flow{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-top:6px}
+.flow .org{background:var(--grad);color:#fff;border-radius:14px;padding:18px 14px;text-align:center}
+.flow .org b{font-size:16px}
+.flow .side{display:flex;flex-direction:column;gap:12px}
+.fbar{border-radius:10px;padding:11px 13px;color:#fff;font-weight:600;font-size:13.5px;display:flex;
+  justify-content:space-between;align-items:center}
+.fbar .n{font-size:20px;font-weight:800}
+.arrow{font-size:24px;color:var(--accent2);text-align:center}
+.muted{color:var(--muted)}
+/* kappa gauges */
+.kapwrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:10px}
+.kap{border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center;background:#fbfdff}
+.kap .big{font-size:38px;font-weight:800}
+.kap.before .big{color:var(--warn)} .kap.after .big{color:var(--good)}
+.kap .lab{font-size:13px;color:var(--muted);font-weight:600}
+.kap .interp{font-size:12.5px;margin-top:4px;font-weight:700}
+.track{height:9px;border-radius:6px;background:#e9eef7;margin:12px 0 4px;overflow:hidden}
+.fill{height:100%;border-radius:6px}
+/* themes */
+.themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.theme{border:1px solid var(--line);border-left:5px solid var(--accent2);border-radius:12px;padding:14px 15px;background:#fbfdff}
+.theme .tt{font-weight:800;color:var(--accent);font-size:14.5px}
+.theme .cc{font-size:11.5px;color:var(--accent2);font-weight:700;margin:5px 0 7px;letter-spacing:.02em}
+.theme p{margin:0;font-size:12.8px;color:#3a4660}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fbe9e4;border:1px solid #eccabd;color:#8a3b25;border-radius:999px;padding:5px 12px;font-size:12.5px;font-weight:600}
+/* table */
+table{width:100%;border-collapse:collapse;font-size:12.7px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#eef3fb;color:var(--accent);font-weight:700;position:sticky;top:0}
+tr:nth-child(even) td{background:#fafcff}
+.badge{display:inline-block;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:700}
+.badge.h{background:#fdeada;color:#9a5a12}
+.badge.n{background:#e6f3ec;color:#1e7a52}
+.scroll{max-height:360px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+/* comparison */
+.cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.fw{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.fw .hd{background:var(--grad);color:#fff;padding:11px 14px;font-weight:800;font-size:14px}
+.fw .bd{padding:12px 14px;font-size:12.6px;color:#3a4660}
+.fw .bd b{color:var(--accent)}
+.fw ul{margin:6px 0 0;padding-left:17px} .fw li{margin:3px 0}
+footer{max-width:1180px;margin:0 auto;padding:8px 22px 50px;color:var(--muted);font-size:12px}
+footer .refs{font-size:11.5px;line-height:1.7;margin-top:8px}
+footer .refs div{padding-left:1.4em;text-indent:-1.4em;margin-bottom:3px}
+h3.section{max-width:1180px;margin:30px auto 12px;padding:0 22px;color:var(--accent);
+  font-size:15px;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="kick">Codificação qualitativa assistida por LLM · Estudo de caso de doutorado</div>
+  <h1>Resultados da Codificação — Acelera Ventures / Grupo Oscar</h1>
+  <p>Transformação digital e inovação aberta · Entrevista com o gestor do programa (anonimizado) · Cinco enquadramentos: Dedutivo, Indutivo, GATOS, CollabCoder e Bardin.</p>
+  <p style="margin-top:10px;font-size:14px"><b>Autoria:</b> Diocélio Goulart · Pesquisador de doutorado em Administração (foco em IA, transformação digital e modelos preditivos) · <a href="mailto:diocelio@bluestars.com.br" style="color:#dbe8f6">diocelio@bluestars.com.br</a></p>
+  <div class="tagrow">
+    <span class="tag">55 unidades de registro</span>
+    <span class="tag">37 códigos a priori</span>
+    <span class="tag">106 atribuições</span>
+    <span class="tag">κ 0,65 → 0,96</span>
+    <span class="tag">Revisão humana no comando</span>
+  </div>
+</div></header>
+
+<main>
+  <div class="kpis">
+    <div class="kpi"><div class="v">55</div><div class="l">Segmentos codificados</div><div class="s">turnos de fala temáticos</div></div>
+    <div class="kpi"><div class="v">28/37</div><div class="l">Códigos acionados</div><div class="s">9 ausentes</div></div>
+    <div class="kpi"><div class="v">106</div><div class="l">Atribuições de código</div><div class="s">primárias + secundárias</div></div>
+    <div class="kpi"><div class="v">0,96</div><div class="l">Kappa pós-consenso</div><div class="s">quase perfeita</div></div>
+    <div class="kpi"><div class="v">5</div><div class="l">Temas indutivos</div><div class="s">13 códigos emergentes</div></div>
+  </div>
+
+  <h3 class="section">Bardin · Mapa categorial</h3>
+  <section class="card">
+    <h2>Distribuição por macrocategoria</h2>
+    <p class="sub">Frequência de atribuições nas doze dimensões do framework (base = 106). O caso concentra-se em <b>Formas e gestão da IA</b>, <b>Níveis de IA</b> e <b>Fluxos de conhecimento</b>.</p>
+    <div class="chartbox tall"><canvas id="cBardin"></canvas></div>
+    <p class="legendnote">Antecedentes / Inteligência Competitiva (clientes, concorrência, crises) tem frequência <b>nula</b>: a inovação é enquadrada como estratégia proativa de sourcing, não como reação ao ambiente.</p>
+  </section>
+
+  <div class="grid2">
+    <section class="card">
+      <h2>Top 10 códigos</h2>
+      <p class="sub">Saliência discursiva por código individual.</p>
+      <div class="chartbox"><canvas id="cTop"></canvas></div>
+    </section>
+    <section class="card">
+      <h2>Fluxos de conhecimento</h2>
+      <p class="sub">Predomínio nítido de entrada (outside-in) sobre saída.</p>
+      <div class="flow">
+        <div class="side">
+          <div class="fbar" style="background:#1f4e79"><span>Outside-in (entra)</span><span class="n">14</span></div>
+          <div class="muted" style="font-size:12px;text-align:center">conhecimento que <b>entra</b></div>
+        </div>
+        <div class="arrow">➜</div>
+        <div class="org"><b>Grupo Oscar<br>/ Acelera</b><div style="font-size:12px;opacity:.9;margin-top:4px">CVC de varejo</div></div>
+      </div>
+      <div class="flow" style="margin-top:14px">
+        <div class="side">
+          <div class="fbar" style="background:#5b9bd5"><span>Inside-out (sai)</span><span class="n">2</span></div>
+          <div class="fbar" style="background:#9db8d6"><span>Colaboração aberta</span><span class="n">1</span></div>
+        </div>
+        <div class="arrow">⟵</div>
+        <div class="muted" style="font-size:12px;text-align:center">spin-offs e<br>licenciamento</div>
+      </div>
+      <p class="legendnote">Razão outside-in : inside-out ≈ 14:2 — modelo de <b>captação</b>, com saída restrita aos spin-offs.</p>
+    </section>
+  </div>
+
+  <h3 class="section">GATOS · Desenvolvimento incremental e saturação</h3>
+  <section class="card">
+    <h2>Curva de saturação do codebook</h2>
+    <p class="sub">Códigos novos criados por unidade (barras) e total acumulado (linha). A criação concentra-se no início; a saturação (N=10 sem código novo) é declarada a partir de S55.</p>
+    <div class="chartbox tall"><canvas id="cGatos"></canvas></div>
+    <p class="legendnote">Após S53 (Forma Interna) e S55 (Motivador Estratégico), as unidades restantes (incluindo o trecho de encerramento/negociação FINEP) reutilizaram códigos existentes. Aplicando N = 10 unidades consecutivas sem código novo, considera-se o codebook saturado a partir de S55. O codebook indutivo final convergiu para ~24 códigos efetivamente acionados, dos 37 a priori.</p>
+  </section>
+
+  <h3 class="section">CollabCoder · Confiabilidade</h3>
+  <section class="card">
+    <h2>Kappa de Cohen — antes e depois do consenso</h2>
+    <p class="sub">Concordância entre dois codificadores, corrigida pelo acaso (Cohen, 1960; faixas de Landis &amp; Koch, 1977).</p>
+    <div class="kapwrap">
+      <div class="kap before">
+        <div class="big">0,649</div>
+        <div class="lab">Antes do consenso · 37/55 concordâncias</div>
+        <div class="track"><div class="fill" style="width:65%;background:#c98a1b"></div></div>
+        <div class="interp" style="color:var(--warn)">SUBSTANCIAL</div>
+      </div>
+      <div class="kap after">
+        <div class="big">0,961</div>
+        <div class="lab">Depois do consenso · 53/55 concordâncias</div>
+        <div class="track"><div class="fill" style="width:96%;background:#1e8e6a"></div></div>
+        <div class="interp" style="color:var(--good)">QUASE PERFEITA</div>
+      </div>
+    </div>
+    <p class="legendnote">Restaram <b>2 divergências genuínas</b> (S17, S26) encaminhadas à decisão sênior. Mapa de mediação das 18 divergências:</p>
+    <div class="scroll"><table>
+      <thead><tr><th>ID</th><th>A</th><th>B</th><th>Origem</th><th>Consenso</th><th>Humano?</th></tr></thead>
+      <tbody>
+      <tr><td><b>S10</b></td><td>C07</td><td>C06</td><td>Fronteira pouco clara entre categorias</td><td>C07 (Experiência do Cliente)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S13</b></td><td>C06</td><td>C10</td><td>Foco interpretativo distinto</td><td>C06 (Eficiência Operacional)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S14</b></td><td>C37</td><td>C30</td><td>Foco interpretativo distinto</td><td>C37 (Barreira Externa – IA)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S15</b></td><td>C30</td><td>C37</td><td>Foco interpretativo distinto</td><td>C30 (Propriedade Intelectual)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S17</b></td><td>C05</td><td>NC</td><td>Definição ambígua do código</td><td>Mantido em aberto</td><td><span class="badge h">Sim</span></td></tr><tr><td><b>S19</b></td><td>C05</td><td>C24</td><td>Fronteira pouco clara entre categorias</td><td>C05 (Estratégias Digitais Emergentes)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S21</b></td><td>C19</td><td>C18</td><td>Foco interpretativo distinto</td><td>C19 (Barreira Tecnológica)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S26</b></td><td>C06</td><td>C31</td><td>Definição ambígua do código</td><td>Mantido em aberto</td><td><span class="badge h">Sim</span></td></tr><tr><td><b>S30</b></td><td>C31</td><td>C05</td><td>Fronteira pouco clara entre categorias</td><td>C31 (Outside-in)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S33</b></td><td>C22</td><td>C04</td><td>Fronteira pouco clara entre categorias</td><td>C22 (Competições)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S34</b></td><td>C23</td><td>C22</td><td>Definição ambígua do código</td><td>C23 (Prêmios — caso negativo)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S38</b></td><td>C29</td><td>C18</td><td>Foco interpretativo distinto</td><td>C29 (Forma Externa)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S40</b></td><td>C23</td><td>C33</td><td>Foco interpretativo distinto</td><td>C23 (Prêmios — caso negativo)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S41</b></td><td>C29</td><td>C25</td><td>Fronteira pouco clara entre categorias</td><td>C29 (Forma Externa)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S49</b></td><td>C16</td><td>C12</td><td>Foco interpretativo distinto</td><td>C16 (Barreira Organizacional)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S50</b></td><td>C37</td><td>C27</td><td>Fronteira pouco clara entre categorias</td><td>C37 (Barreira Externa – IA)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S53</b></td><td>C28</td><td>C05</td><td>Foco interpretativo distinto</td><td>C28 (Forma Interna)</td><td><span class="badge n">Não</span></td></tr><tr><td><b>S55</b></td><td>C14</td><td>C18</td><td>Definição ambígua do código</td><td>C14 (Motivador Estratégico)</td><td><span class="badge n">Não</span></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <h3 class="section">Indutivo · Temas emergentes</h3>
+  <section class="card">
+    <h2>Cinco temas a partir dos dados</h2>
+    <p class="sub">Análise temática reflexiva (Braun &amp; Clarke, 2006): padrões construídos de baixo para cima, convergindo com — e enriquecendo — o framework a priori.</p>
+    <div class="themes">
+      <div class="theme"><div class="tt">T1 · O grupo econômico como ativo de atração e validação</div><div class="cc">IND-01, IND-02, IND-05</div><p>O diferencial competitivo do programa é usar a relevância do grupo varejista para atrair startups e validar soluções, oferecendo ‘case’ e mercado em vez de capital puro.</p></div><div class="theme"><div class="tt">T2 · Arquitetura operacional da inovação aberta</div><div class="cc">IND-03, IND-04, IND-06</div><p>O funil de chamadas, o consórcio inter-varejista e o modelo híbrido de captação organizam a prática de IA de forma replicável e de baixo custo fixo.</p></div><div class="theme"><div class="tt">T3 · Da POC ao produto: incubação e spin-off</div><div class="cc">IND-07, IND-08</div><p>Produtos nascem como POC dentro do cliente e amadurecem rumo a spin-off; mesmo parcerias fracassadas deixam ativos (código-fonte) reaproveitáveis.</p></div><div class="theme"><div class="tt">T4 · Governança e gestão do portfólio</div><div class="cc">IND-09, IND-13</div><p>A governança escala com a participação; o programa recusa prêmios e crowdsourcing, sinalizando opção por mecanismos de equity e cooperação.</p></div><div class="theme"><div class="tt">T5 · Capacidades e ecossistema</div><div class="cc">IND-10, IND-11, IND-12</div><p>Cultura, apoio da alta gestão e competências dos sócios sustentam a IA, mas o laço com o ecossistema regional de C&T ainda é frágil.</p></div>
+    </div>
+  </section>
+
+  <h3 class="section">Dedutivo · Ausências como achado</h3>
+  <section class="card">
+    <h2>Códigos com frequência zero</h2>
+    <p class="sub">9 dos 37 códigos não foram acionados — leitura como não-tematização pelo informante neste recorte.</p>
+    <div class="chips"><span class="chip">1 · Clientes</span><span class="chip">2 · Concorrência</span><span class="chip">3 · Crises</span><span class="chip">9 · Automação de Processos</span><span class="chip">13 · Motivador Ético-legal</span><span class="chip">15 · Motivador Tecnológico</span><span class="chip">17 · Barreira Ético-legal</span><span class="chip">20 · Open Sourcing</span><span class="chip">36 · Barreira Interna – Inovação Aberta</span></div>
+    <p class="legendnote">Sem inteligência competitiva, sem automação/RPA, sem open sourcing; prêmios e crowdsourcing são <b>recusados explicitamente</b> — caracterizando um modelo seletivo, não de multidão.</p>
+  </section>
+
+  <h3 class="section">Síntese · Os cinco enquadramentos</h3>
+  <section class="card">
+    <div class="cmp">
+      <div class="fw"><div class="hd">Dedutivo</div><div class="bd"><b>Codebook a priori (37)</b><ul><li>106 atribuições</li><li>Top: Outside-in, Forma Externa</li><li>9 códigos ausentes</li></ul></div></div>
+      <div class="fw"><div class="hd">Indutivo</div><div class="bd"><b>Códigos emergentes</b><ul><li>13 códigos · 5 temas</li><li>Achado: "CVC de valor agregado"</li><li>Convergência com o framework</li></ul></div></div>
+      <div class="fw"><div class="hd">GATOS</div><div class="bd"><b>Codebook incremental</b><ul><li>~24 códigos acionados</li><li>Criação concentrada cedo</li><li>Saturação a partir de S55</li></ul></div></div>
+      <div class="fw"><div class="hd">CollabCoder</div><div class="bd"><b>Dupla codificação + κ</b><ul><li>κ 0,65 → 0,96</li><li>17 divergências mediadas</li><li>2 decisões humanas</li></ul></div></div>
+      <div class="fw"><div class="hd">Bardin</div><div class="bd"><b>Quantificação categorial</b><ul><li>12 macrocategorias</li><li>Modal: Formas e gestão da IA</li><li>Antecedentes = 0</li></ul></div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <b>Autoria e créditos.</b> Diocélio Goulart — Pesquisador de doutorado em Administração (foco em IA, transformação digital e modelos preditivos). Concepção metodológica, curadoria analítica e autoria dos relatórios. A codificação foi assistida por modelo de linguagem (Claude) e submetida integralmente à revisão e à decisão do autor. Contato: <a href="mailto:diocelio@bluestars.com.br">diocelio@bluestars.com.br</a>. Licença: CC BY 4.0 · © 2026 Diocélio Goulart. <b>Como citar:</b> Diocélio Goulart (2026). Codificação e análise qualitativa da entrevista — estudo de caso Acelera Ventures / Grupo Oscar. Relatório de pesquisa, sob CC BY 4.0.
+  <br><br>
+  <b>Transparência metodológica.</b> Produzido com assistência de Claude (Opus 4.x) — assistência de codificação sob revisão humana, temperatura 0.0–0.2 (codificação dedutiva e categorial); 0.0–0.3 (indutiva/GATOS), sob revisão humana de toda atribuição. Anonimização conforme LGPD; uso de IA coberto pelo TCLE. A concordância humano–LLM não substitui a concordância entre dois pesquisadores humanos; recomenda-se replicar a dupla codificação na versão final da tese. Limitações: risco de alucinação/inversão indutiva (Morgan, 2023) e perda de nuance no agrupamento (Katz et al., 2024).
+  <div class="refs">
+    <div>Bardin, L. (2011). <i>Análise de conteúdo</i> (L. A. Reto &amp; A. Pinheiro, Trads.). Edições 70.</div>
+    <div>Braun, V., &amp; Clarke, V. (2006). Using thematic analysis in psychology. <i>Qualitative Research in Psychology, 3</i>(2), 77–101.</div>
+    <div>Cohen, J. (1960). A coefficient of agreement for nominal scales. <i>Educational and Psychological Measurement, 20</i>(1), 37–46.</div>
+    <div>Gao, J., et al. (2024). CollabCoder. <i>CHI ’24</i>, 1–29. https://doi.org/10.1145/3613904.3642002</div>
+    <div>Katz, A., Fleming, G. C., &amp; Main, J. (2024). Thematic analysis with open-source generative AI and ML. <i>arXiv</i>:2410.03721.</div>
+    <div>Landis, J. R., &amp; Koch, G. G. (1977). The measurement of observer agreement for categorical data. <i>Biometrics, 33</i>(1), 159–174.</div>
+    <div>Saldaña, J. (2021). <i>The coding manual for qualitative researchers</i> (4th ed.). SAGE.</div>
+  </div>
+</footer>
+
+<script>
+const DATA = {"meta":{"estudo":"Estudo de caso de doutorado — Transformação digital e inovação aberta no Grupo Oscar (Acelera Ventures)","fonte":"Entrevista semiestruturada com o gestor do programa de inovação aberta (codinome: Júlio), 17 perguntas, ~1h08min","informante":"Gestor do programa de inovação aberta (anonimizado conforme TCLE)","modelo":"Claude (Opus 4.x) — assistência de codificação sob revisão humana","temperatura":"0.0–0.2 (codificação dedutiva e categorial); 0.0–0.3 (indutiva/GATOS)","data":"2026-06-30","unidadeRegistro":"Turno de fala temático do informante (paragrafação por mudança de tópico)","nSegmentos":55,"nCodigos":37},"macro":[{"id":"I","nome":"Formas e gestão da IA","codigos":"28, 29, 30","n":20},{"id":"H","nome":"Níveis de Inovação Aberta","codigos":"24, 25, 26, 27","n":18},{"id":"J","nome":"Fluxos de conhecimento","codigos":"31, 32, 33","n":17},{"id":"C","nome":"Resultados de valor da TD","codigos":"6, 7, 8","n":9},{"id":"E","nome":"Motivadores da TD","codigos":"12, 13, 14, 15","n":9},{"id":"G","nome":"Mecanismos de Inovação Aberta","codigos":"20, 21, 22, 23","n":9},{"id":"B","nome":"Estratégias Digitais","codigos":"4, 5","n":8},{"id":"F","nome":"Barreiras da TD","codigos":"16, 17, 18, 19","n":5},{"id":"D","nome":"Tecnologias digitais","codigos":"9, 10, 11","n":4},{"id":"L","nome":"Barreiras da Inovação Aberta","codigos":"36, 37","n":4},{"id":"K","nome":"Geração de valor","codigos":"34, 35","n":3},{"id":"A","nome":"Antecedentes / Inteligência Competitiva","codigos":"1, 2, 3","n":0}],"top":[{"code":31,"label":"Outside-in","n":14},{"code":29,"label":"Forma Externa","n":13},{"code":26,"label":"Interorganizacional","n":9},{"code":12,"label":"Motivador Organizacional","n":8},{"code":22,"label":"Competições","n":6},{"code":5,"label":"Estratégias Digitais Emergentes","n":5},{"code":8,"label":"Novos Negócios","n":5},{"code":27,"label":"Sistemas de Inovação","n":5},{"code":30,"label":"Propriedade Intelectual","n":5},{"code":37,"label":"Barreira Externa – Inovação Aberta","n":4}],"gatos":[{"u":"S01","novos":2,"cum":2,"what":"Outside-in; Forma Externa"},{"u":"S03","novos":1,"cum":3,"what":"Competições (chamadas)"},{"u":"S04","novos":1,"cum":4,"what":"Exploração Contínua"},{"u":"S05","novos":1,"cum":5,"what":"Motivador Organizacional"},{"u":"S06","novos":1,"cum":6,"what":"Novos Negócios (investir)"},{"u":"S10","novos":2,"cum":8,"what":"Experiência do Cliente; Eficiência Operacional"},{"u":"S11","novos":2,"cum":10,"what":"Inside-out; Novos Modelos de Negócio"},{"u":"S13","novos":1,"cum":11,"what":"Data Analytics"},{"u":"S14","novos":2,"cum":13,"what":"Barreira Externa – IA; Propriedade Intelectual"},{"u":"S16","novos":1,"cum":14,"what":"Oportunidades na Cadeia de Valor"},{"u":"S18","novos":0,"cum":14,"what":"(reutiliza Forma Externa / Emergentes)"},{"u":"S19","novos":1,"cum":15,"what":"Intraorganizacional"},{"u":"S21","novos":2,"cum":17,"what":"Barreira Tecnológica; Barreira Estratégica"},{"u":"S24","novos":1,"cum":18,"what":"Sistemas de Inovação"},{"u":"S25","novos":1,"cum":19,"what":"Estratégias Digitais Deliberadas"},{"u":"S26","novos":1,"cum":20,"what":"Eficiência Operacional (horizonte 1)"},{"u":"S29","novos":1,"cum":21,"what":"Interorganizacional"},{"u":"S34","novos":1,"cum":22,"what":"Prêmios (caso negativo)"},{"u":"S38","novos":1,"cum":23,"what":"Barreira Estratégica (opção de não criar fundo)"},{"u":"S43","novos":1,"cum":24,"what":"Crowdsourcing (caso negativo)"},{"u":"S49","novos":1,"cum":25,"what":"Barreira Organizacional"},{"u":"S53","novos":1,"cum":26,"what":"Forma Interna (capacidade)"},{"u":"S55","novos":1,"cum":27,"what":"Motivador Estratégico"}],"absent":["1 · Clientes","2 · Concorrência","3 · Crises","9 · Automação de Processos","13 · Motivador Ético-legal","15 · Motivador Tecnológico","17 · Barreira Ético-legal","20 · Open Sourcing","36 · Barreira Interna – Inovação Aberta"],"flows":{"out":14,"in":2,"collab":1},"niveis":[{"k":"Intraorganizacional","n":1},{"k":"Organizacional","n":3},{"k":"Interorganizacional","n":9},{"k":"Sistemas de Inovação","n":5}],"kappa":{"antes":{"n":55,"conc":37,"po":0.6727,"pe":0.0678,"kappa":0.6489,"interp":"substancial"},"depois":{"n":55,"conc":53,"po":0.9636,"pe":0.076,"kappa":0.9606,"interp":"quase perfeita"},"residual":["S17","S26"]},"temas":[["T1","O grupo econômico como ativo de atração e validação","IND-01, IND-02, IND-05","O diferencial competitivo do programa é usar a relevância do grupo varejista para atrair startups e validar soluções, oferecendo ‘case’ e mercado em vez de capital puro."],["T2","Arquitetura operacional da inovação aberta","IND-03, IND-04, IND-06","O funil de chamadas, o consórcio inter-varejista e o modelo híbrido de captação organizam a prática de IA de forma replicável e de baixo custo fixo."],["T3","Da POC ao produto: incubação e spin-off","IND-07, IND-08","Produtos nascem como POC dentro do cliente e amadurecem rumo a spin-off; mesmo parcerias fracassadas deixam ativos (código-fonte) reaproveitáveis."],["T4","Governança e gestão do portfólio","IND-09, IND-13","A governança escala com a participação; o programa recusa prêmios e crowdsourcing, sinalizando opção por mecanismos de equity e cooperação."],["T5","Capacidades e ecossistema","IND-10, IND-11, IND-12","Cultura, apoio da alta gestão e competências dos sócios sustentam a IA, mas o laço com o ecossistema regional de C&T ainda é frágil."]],"indutivo":[["IND-01","O grupo econômico como ímã e gerador de case para startups","S01,S02,S07,S32"],["IND-02","Dupla lógica: resolver a dor interna e investir no negócio","S06,S22,S31"],["IND-03","Funil de chamada: tema → divulgação → screening → POC → contratação/investimento","S28,S29,S30,S33,S34,S35"],["IND-04","Consórcio entre varejistas não concorrentes para ratear o custo da inovação","S28,S29"],["IND-05","CVC ‘leve’, estilo anjo, com aporte de valor (abrir portas e lapidar produto)","S38,S39,S40"],["IND-06","Captação sem fundo estruturado: capital próprio + co-investimento de family offices","S38"],["IND-07","Spin-off de produto incubado dentro do cliente (POC no Oscar)","S11,S18,S19,S20"],["IND-08","Ativo retido apesar do fracasso da parceria (código-fonte vira patrimônio)","S14,S15,S44"],["IND-09","Governança progressiva da investida conforme o grau de participação","S41,S42"],["IND-10","Cultura e apoio da alta gestão como precondição da inovação","S05,S47,S48,S49"],["IND-11","Conhecimento de inovação trazido pelos sócios (Dom Cabral, Trinceda, design/ágil)","S52,S53,S54"],["IND-12","Ecossistema regional incipiente (universidades/parques com laço fraco)","S24,S36,S45,S46,S50"],["IND-13","Recusa deliberada de prêmios e de crowdsourcing","S34,S40,S43"]],"divergencias":[["S10","C07","C06","Fronteira pouco clara entre categorias","C07 (Experiência do Cliente)","Foco no usuário final prevalece sobre o ganho de eficiência interna.",false],["S13","C06","C10","Foco interpretativo distinto","C06 (Eficiência Operacional)","Ferramenta de acompanhamento de metas é gestão operacional, não analytics preditivo.",false],["S14","C37","C30","Foco interpretativo distinto","C37 (Barreira Externa – IA)","O ponto central é o fracasso da parceria; a PI é consequência (secundária).",false],["S15","C30","C37","Foco interpretativo distinto","C30 (Propriedade Intelectual)","O ativo retido (código-fonte) é o significado dominante.",false],["S17","C05","NC","Definição ambígua do código","Mantido em aberto","Saliência baixa; divergência genuína — decisão sênior.",true],["S19","C05","C24","Fronteira pouco clara entre categorias","C05 (Estratégias Digitais Emergentes)","Iteração/roadmap prevalece sobre o nível intraorganizacional.",false],["S21","C19","C18","Foco interpretativo distinto","C19 (Barreira Tecnológica)","Arquitetura monolítica é a causa-raiz; o adiamento do board é efeito.",false],["S26","C06","C31","Definição ambígua do código","Mantido em aberto","Eficiência (horizonte 1) vs. abertura externa — divergência genuína.",true],["S30","C31","C05","Fronteira pouco clara entre categorias","C31 (Outside-in)","O fluxo de entrada de soluções é o eixo; a POC é instrumento.",false],["S33","C22","C04","Fronteira pouco clara entre categorias","C22 (Competições)","O desenho descreve a mecânica da chamada, não um plano estratégico formal.",false],["S34","C23","C22","Definição ambígua do código","C23 (Prêmios — caso negativo)","Verbatim nega explicitamente prêmios; codifica-se como ausência relevante.",false],["S38","C29","C18","Foco interpretativo distinto","C29 (Forma Externa)","O tema é o mecanismo de captação do CVC; a opção de não criar fundo é nuance.",false],["S40","C23","C33","Foco interpretativo distinto","C23 (Prêmios — caso negativo)","Reitera a recusa de prêmios; a cooperação é o substituto.",false],["S41","C29","C25","Fronteira pouco clara entre categorias","C29 (Forma Externa)","Governança da investida integra o mecanismo de CVC.",false],["S49","C16","C12","Foco interpretativo distinto","C16 (Barreira Organizacional)","Ênfase na jornada cultural pendente (barreira), não no motivador.",false],["S50","C37","C27","Fronteira pouco clara entre categorias","C37 (Barreira Externa – IA)","Dificuldade de inserção é barreira; o sistema de inovação é o contexto.",false],["S53","C28","C05","Foco interpretativo distinto","C28 (Forma Interna)","Capacidade interna (ágil/design) é o significado; a experimentação é uso.",false],["S55","C14","C18","Definição ambígua do código","C14 (Motivador Estratégico)","Consolidar valor é vetor estratégico, não barreira.",false]],"saturacao":"Após S53 (Forma Interna) e S55 (Motivador Estratégico), as unidades restantes (incluindo o trecho de encerramento/negociação FINEP) reutilizaram códigos existentes. Aplicando N = 10 unidades consecutivas sem código novo, considera-se o codebook saturado a partir de S55. O codebook indutivo final convergiu para ~24 códigos efetivamente acionados, dos 37 a priori.","total":106};
+Chart.defaults.font.family = "Segoe UI, system-ui, sans-serif";
+Chart.defaults.color = "#3a4660";
+const AC="#1f4e79", AC2="#2e75b6", AC3="#5b9bd5";
+
+// Bardin horizontal bar
+new Chart(document.getElementById('cBardin'),{
+  type:'bar',
+  data:{labels:DATA.macro.map(m=>m.id+' · '+m.nome),
+    datasets:[{data:DATA.macro.map(m=>m.n),
+      backgroundColor:DATA.macro.map((m,i)=>i===0?AC:i<3?AC2:AC3),borderRadius:5}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw+' ocorrências ('+((c.raw/DATA.total)*100).toFixed(1)+'%)'}}},
+    scales:{x:{grid:{color:'#eef2f9'},title:{display:true,text:'nº de atribuições'}},y:{grid:{display:false}}}}
+});
+
+// Top codes
+new Chart(document.getElementById('cTop'),{
+  type:'bar',
+  data:{labels:DATA.top.map(t=>t.code+' '+t.label),
+    datasets:[{data:DATA.top.map(t=>t.n),backgroundColor:AC2,borderRadius:5}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false}},scales:{x:{grid:{color:'#eef2f9'}},y:{grid:{display:false},ticks:{font:{size:11}}}}}
+});
+
+// GATOS combo
+new Chart(document.getElementById('cGatos'),{
+  data:{labels:DATA.gatos.map(g=>g.u),
+    datasets:[
+      {type:'line',label:'Codebook acumulado',data:DATA.gatos.map(g=>g.cum),
+        borderColor:AC,backgroundColor:'rgba(31,78,121,.08)',fill:true,tension:.25,yAxisID:'y',pointRadius:3,borderWidth:2.5},
+      {type:'bar',label:'Códigos novos',data:DATA.gatos.map(g=>g.novos),
+        backgroundColor:AC3,borderRadius:4,yAxisID:'y2'}
+    ]},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    plugins:{legend:{position:'top'},tooltip:{callbacks:{afterBody:items=>{const g=DATA.gatos[items[0].dataIndex];return g.what?('→ '+g.what):''}}}},
+    scales:{y:{position:'left',title:{display:true,text:'acumulado'},grid:{color:'#eef2f9'},beginAtZero:true},
+      y2:{position:'right',title:{display:true,text:'novos'},grid:{display:false},beginAtZero:true,max:3},
+      x:{grid:{display:false},ticks:{font:{size:10}}}}}
+});
+</script>
+</body>
+</html>
