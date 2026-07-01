@@ -1,5 +1,7 @@
 # Codificação e análise qualitativa — Acelera Ventures / Grupo Oscar
 
+`v2.0.0` · Licença **CC BY 4.0** · Autoria: **Diocélio Goulart** · ver [CHANGELOG.md](CHANGELOG.md)
+
 Codificação qualitativa assistida por LLM (com revisão humana no comando) de uma
 entrevista semiestruturada, aplicando **cinco enquadramentos analíticos** sobre um
 codebook de 37 códigos de **transformação digital** e **inovação aberta**:

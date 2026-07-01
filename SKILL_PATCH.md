@@ -1,3 +1,7 @@
+> **Versão da skill: v1.0.0 → v2.0.0 (mudança maior / breaking).**
+> Esta atualização incorpora **identidade visual**, **novos geradores** e
+> **citação formal**. Ver `CHANGELOG.md`.
+
 # Patch para a skill `qualitative-coding` (aplicar em Configurações > Capacidades)
 
 > **Contexto.** Nesta sessão do Cowork não é possível editar a skill instalada
