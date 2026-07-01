@@ -9,13 +9,17 @@ abstract: >-
 type: dataset
 authors:
   - family-names: "Goulart"
-    given-names: "Diocélio"
-    email: "diocelio@bluestars.com.br"
-    # orcid: "https://orcid.org/0000-0000-0000-0000"   # PREENCHER
-    # affiliation: ""                                    # PREENCHER
+    given-names: "Diocélio Dornela"
+    email: "diocelio.goulart@educ.fdc.org.br"
+    orcid: "https://orcid.org/0000-0001-5423-3596"
+    affiliation: "Fundação Dom Cabral (FDC)"
+    city: "Belo Horizonte"
+    region: "MG"
+    country: "BR"
 version: "2.0.0"
 date-released: "2026-07-01"
 license: "CC-BY-4.0"
+url: "https://dioceliogoulart.com.br"
 keywords:
   - "análise qualitativa"
   - "codificação qualitativa"

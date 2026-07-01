@@ -1,6 +1,6 @@
 # Codificação e análise qualitativa — Acelera Ventures / Grupo Oscar
 
-`v2.0.0` · Licença **CC BY 4.0** · Autoria: **Diocélio Goulart** · ver [CHANGELOG.md](CHANGELOG.md)
+`v2.0.0` · Licença **CC BY 4.0** · Autoria: **Diocélio Dornela Goulart** · ver [CHANGELOG.md](CHANGELOG.md)
 
 Codificação qualitativa assistida por LLM (com revisão humana no comando) de uma
 entrevista semiestruturada, aplicando **cinco enquadramentos analíticos** sobre um
@@ -19,29 +19,32 @@ codebook de 37 códigos de **transformação digital** e **inovação aberta**:
 
 ## Autoria e contato
 
-**Diocélio Goulart** — Pesquisador de doutorado em Administração (foco em IA,
-transformação digital e modelos preditivos).
+**Diocélio Dornela Goulart** — Doutorado em Administração (PUC Minas) · Fundação Dom Cabral (FDC).
 
 | | |
 |---|---|
-| **E-mail** | diocelio@bluestars.com.br |
-| **Afiliação** | _[PREENCHER: Programa de Pós-Graduação / Instituição]_ |
-| **ORCID** | _[PREENCHER: 0000-0000-0000-0000]_ |
-| **Lattes** | _[PREENCHER]_ |
-| **LinkedIn** | _[PREENCHER]_ |
+| **E-mail** | diocelio.goulart@educ.fdc.org.br |
+| **Instituição de vínculo** | Fundação Dom Cabral (FDC) |
+| **Doutorado** | Administração — PUC Minas |
+| **Cidade** | Belo Horizonte, MG, Brasil |
+| **ORCID** | [0000-0001-5423-3596](https://orcid.org/0000-0001-5423-3596) |
+| **Lattes** | http://lattes.cnpq.br/5413779633365231 |
+| **LinkedIn** | https://www.linkedin.com/in/diocelio/ |
+| **Site** | https://dioceliogoulart.com.br |
 
-**Bio.** Diocélio Goulart é pesquisador de doutorado em Administração, com ênfase em
-inteligência artificial, transformação digital e modelos preditivos. Investiga
-transformação digital e inovação aberta em grupos econômicos, articulando pesquisa
-acadêmica e prática de consultoria (pesquisa-ação). _[PREENCHER/AJUSTAR.]_
+**Bio.** Diocélio Dornela Goulart atua na Fundação Dom Cabral (FDC) e desenvolve
+doutorado em Administração na PUC Minas, com ênfase em inteligência artificial,
+transformação digital e modelos preditivos. Investiga transformação digital e inovação
+aberta em grupos econômicos, articulando produção acadêmica e prática de consultoria
+(pesquisa-ação).
 
 **Papel na autoria.** Concepção metodológica, curadoria analítica e autoria dos
 relatórios. A codificação foi assistida por modelo de linguagem (Claude) e submetida
 integralmente à revisão e à decisão do autor.
 
-> Os campos marcados como _[PREENCHER]_ estão centralizados em [`autoria.json`](autoria.json).
-> Edite **apenas esse arquivo** e rode `node run_all.js` para propagar a autoria a todos
-> os relatórios e ao diagrama.
+> Os dados de autoria estão centralizados em [`autoria.json`](autoria.json). Edite esse
+> arquivo e rode `node run_all.js` para propagar a autoria a todos os relatórios e ao
+> diagrama.
 
 ---
 
@@ -63,15 +66,10 @@ integralmente à revisão e à decisão do autor.
 │   ├── irr_form_antes.csv           # dupla codificação — antes do consenso
 │   └── irr_form_depois.csv          # dupla codificação — depois do consenso
 ├── scripts/                         # reprodutibilidade (Node.js)
-│   ├── data.js                      # base de dados (segmentos, frequências, frameworks)
-│   ├── lib.js                       # helpers de geração .docx
-│   ├── generate.js                  # gera os 6 relatórios .docx
-│   └── build_html.js                # gera o diagrama HTML
+│   ├── data.js  ├── lib.js  ├── generate.js  └── build_html.js
 ├── autoria.json                     # configuração central de autoria
 ├── run_all.js                       # SAÍDA PADRÃO: gera todos os relatórios + o diagrama
-├── package.json
-├── CITATION.cff
-├── AUTHORS.md
+├── package.json  ├── CITATION.cff  ├── AUTHORS.md  ├── CHANGELOG.md
 ├── SKILL_PATCH.md                   # texto para atualizar a skill qualitative-coding
 └── LICENSE                          # CC BY 4.0
 ```
@@ -91,7 +89,7 @@ npm install         # instala a dependência 'docx'
 node run_all.js     # regenera os 6 .docx e o Diagrama_Resultados.html em reports/
 ```
 
-Para recalcular o Kappa de Cohen (script da skill `qualitative-coding`):
+Recalcular o Kappa de Cohen:
 
 ```bash
 python3 cohen_kappa.py data/irr_form_antes.csv
@@ -103,35 +101,23 @@ python3 cohen_kappa.py data/irr_form_depois.csv
 ## Principais resultados
 
 - **55** unidades de registro · **37** códigos a priori · **106** atribuições de código.
-- Perfil dominante: **inovação aberta *outside-in* centrada em CVC** — os códigos mais
-  frequentes são *Outside-in* (14), *Forma Externa* (13) e *Interorganizacional* (9).
+- Perfil dominante: **inovação aberta *outside-in* centrada em CVC** — códigos mais
+  frequentes: *Outside-in* (14), *Forma Externa* (13), *Interorganizacional* (9).
 - Concentração categorial (Bardin): *Formas e gestão da IA* (18,9%), *Níveis de IA*
-  (17,0%) e *Fluxos de conhecimento* (16,0%).
+  (17,0%), *Fluxos de conhecimento* (16,0%).
 - **Confiabilidade (CollabCoder):** Kappa de Cohen **0,649 → 0,961** (substancial →
-  quase perfeita) após o consenso; 2 divergências genuínas encaminhadas a decisão humana.
+  quase perfeita) após consenso; 2 divergências genuínas a decisão humana.
 - **Ausências como achado:** sem inteligência competitiva, sem automação/RPA, sem open
-  sourcing; prêmios e crowdsourcing **recusados explicitamente** — modelo seletivo.
-
----
-
-## Enquadramentos e referências (APA 7)
-
-- Bardin, L. (2011). *Análise de conteúdo* (L. A. Reto & A. Pinheiro, Trads.). Edições 70.
-- Braun, V., & Clarke, V. (2006). Using thematic analysis in psychology. *Qualitative Research in Psychology, 3*(2), 77–101. https://doi.org/10.1191/1478088706qp063oa
-- Cohen, J. (1960). A coefficient of agreement for nominal scales. *Educational and Psychological Measurement, 20*(1), 37–46. https://doi.org/10.1177/001316446002000104
-- Gao, J., et al. (2024). CollabCoder. *CHI ’24*, 1–29. https://doi.org/10.1145/3613904.3642002
-- Katz, A., Fleming, G. C., & Main, J. (2024). Thematic analysis with open-source generative AI and ML. *arXiv*:2410.03721. https://doi.org/10.48550/arXiv.2410.03721
-- Landis, J. R., & Koch, G. G. (1977). The measurement of observer agreement for categorical data. *Biometrics, 33*(1), 159–174. https://doi.org/10.2307/2529310
-- Saldaña, J. (2021). *The coding manual for qualitative researchers* (4th ed.). SAGE.
+  sourcing; prêmios e crowdsourcing **recusados explicitamente**.
 
 ---
 
 ## Como citar
 
 ```
-Goulart, D. (2026). Codificação e análise qualitativa da entrevista — estudo de caso
+Goulart, D. D. (2026). Codificação e análise qualitativa da entrevista — estudo de caso
 Acelera Ventures / Grupo Oscar (transformação digital e inovação aberta). Repositório
-de pesquisa. Licenciado sob CC BY 4.0.
+de pesquisa. Licenciado sob CC BY 4.0. https://dioceliogoulart.com.br
 ```
 
 Ver [`CITATION.cff`](CITATION.cff) para o registro estruturado.
@@ -140,8 +126,8 @@ Ver [`CITATION.cff`](CITATION.cff) para o registro estruturado.
 
 ## Licença
 
-[CC BY 4.0](LICENSE) © 2026 Diocélio Goulart. Uso livre, inclusive comercial, mediante
-atribuição do crédito ao autor.
+[CC BY 4.0](LICENSE) © 2026 Diocélio Dornela Goulart. Uso livre, inclusive comercial,
+mediante atribuição do crédito ao autor.
 
 ## Transparência metodológica
 
