@@ -1,3 +1,5 @@
+> **Nota (v2.1.0).** Este arquivo é o registro histórico do patch original. A skill `qualitative-coding` agora tem uma definição completa e instalável em [`SKILL.md`](SKILL.md), com instruções de instalação para Claude, Codex e Manus no [`README.md`](README.md).
+
 > **Versão da skill: v1.0.0 → v2.0.0 (mudança maior / breaking).**
 > Esta atualização incorpora **identidade visual**, **novos geradores** e
 > **citação formal**. Ver `CHANGELOG.md`.

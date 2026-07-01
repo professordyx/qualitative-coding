@@ -120,7 +120,7 @@ h3.section{max-width:1180px;margin:30px auto 12px;padding:0 22px;color:var(--acc
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <div class="kick">Codificação qualitativa assistida por LLM · Estudo de caso de doutorado</div>
+  <div class="kick">Codificação qualitativa assistida por LLM · Estudo de caso da tese de doutorado (PUC Minas, ago/2025)</div>
   <h1>Resultados da Codificação — Acelera Ventures / Grupo Oscar</h1>
   <p>Transformação digital e inovação aberta · Entrevista com o gestor do programa (anonimizado) · Cinco enquadramentos: Dedutivo, Indutivo, GATOS, CollabCoder e Bardin.</p>
   <p style="margin-top:10px;font-size:14px"><b>Autoria:</b> ${A.nomeCompleto} · ${A.titulacao} · <a href="mailto:${A.email}" style="color:#dbe8f6">${A.email}</a></p>

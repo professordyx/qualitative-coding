@@ -1,57 +1,146 @@
-# Codificação e análise qualitativa — Acelera Ventures / Grupo Oscar
+<div align="center">
 
-`v2.0.0` · Licença **CC BY 4.0** · Autoria: **Diocélio Dornela Goulart** · ver [CHANGELOG.md](CHANGELOG.md)
+# 🧩 Codificação e Análise Qualitativa
+### Acelera Ventures · Grupo Oscar
+
+[![Versão](https://img.shields.io/badge/vers%C3%A3o-2.0.0-6f42c1?style=flat-square)](CHANGELOG.md)
+[![Licença](https://img.shields.io/badge/licen%C3%A7a-CC%20BY%204.0-blue?style=flat-square)](LICENSE)
+[![Node](https://img.shields.io/badge/node-%E2%89%A5%2018-339933?style=flat-square&logo=node.js&logoColor=white)](package.json)
+[![Autor](https://img.shields.io/badge/autor-Dr.%20Dioc%C3%A9lio%20Dornela%20Goulart-informational?style=flat-square)](https://orcid.org/0000-0001-5423-3596)
+[![ORCID](https://img.shields.io/badge/ORCID-0000--0001--5423--3596-a6ce39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0000-0001-5423-3596)
+
+🇧🇷 **Português** &nbsp;·&nbsp; [🇪🇸 Español](README.es.md) &nbsp;·&nbsp; [🇬🇧 English](README.en.md)
+
+</div>
+
+---
 
 Codificação qualitativa assistida por LLM (com revisão humana no comando) de uma
 entrevista semiestruturada, aplicando **cinco enquadramentos analíticos** sobre um
 codebook de 37 códigos de **transformação digital** e **inovação aberta**:
 
-1. **Dedutivo** — aplicação do codebook a priori (análise de conteúdo dirigida).
-2. **Indutivo** — códigos emergentes e temas (análise temática reflexiva).
-3. **GATOS** — desenvolvimento incremental do codebook e controle de saturação.
-4. **CollabCoder** — dupla codificação, mediação de divergências e Kappa de Cohen.
-5. **Bardin** — quantificação categorial (frequências, percentuais, exemplos-âncora).
+| # | Enquadramento | O que faz |
+|---|---|---|
+| 1️⃣ | **Dedutivo** | Aplicação do codebook a priori (análise de conteúdo dirigida) |
+| 2️⃣ | **Indutivo** | Códigos emergentes e temas (análise temática reflexiva) |
+| 3️⃣ | **GATOS** | Desenvolvimento incremental do codebook e controle de saturação |
+| 4️⃣ | **CollabCoder** | Dupla codificação, mediação de divergências e Kappa de Cohen |
+| 5️⃣ | **Bardin** | Quantificação categorial (frequências, percentuais, exemplos-âncora) |
 
-> Estudo de caso de doutorado sobre transformação digital e inovação aberta em um
-> grupo econômico do varejo (programa de corporate venture *Acelera Ventures*).
+> 🎓 Estudo de caso da **tese de doutorado** sobre transformação digital e inovação
+> aberta em um grupo econômico do varejo (programa de corporate venture *Acelera
+> Ventures*) — **PUC Minas, tese defendida em agosto de 2025**.
 
 ---
 
-## Autoria e contato
+## 👤 Autoria e contato
 
-**Diocélio Dornela Goulart** — Doutorado em Administração (PUC Minas) · Fundação Dom Cabral (FDC).
+**Dr. Diocélio Dornela Goulart** — Doutor em Administração (PUC Minas, tese
+defendida em agosto de 2025) · Fundação Dom Cabral (FDC).
 
 | | |
 |---|---|
 | **E-mail** | diocelio.goulart@educ.fdc.org.br |
 | **Instituição de vínculo** | Fundação Dom Cabral (FDC) |
-| **Doutorado** | Administração — PUC Minas |
+| **Titulação** | Doutor em Administração — PUC Minas (tese defendida em agosto de 2025) |
 | **Cidade** | Belo Horizonte, MG, Brasil |
 | **ORCID** | [0000-0001-5423-3596](https://orcid.org/0000-0001-5423-3596) |
 | **Lattes** | http://lattes.cnpq.br/5413779633365231 |
 | **LinkedIn** | https://www.linkedin.com/in/diocelio/ |
 | **Site** | https://dioceliogoulart.com.br |
 
-**Bio.** Diocélio Dornela Goulart atua na Fundação Dom Cabral (FDC) e desenvolve
-doutorado em Administração na PUC Minas, com ênfase em inteligência artificial,
-transformação digital e modelos preditivos. Investiga transformação digital e inovação
-aberta em grupos econômicos, articulando produção acadêmica e prática de consultoria
-(pesquisa-ação).
+**Bio.** Diocélio Dornela Goulart atua na Fundação Dom Cabral (FDC) e é **Doutor em
+Administração pela PUC Minas** (tese defendida em agosto de 2025), com ênfase em
+inteligência artificial, transformação digital e modelos preditivos. Investiga
+transformação digital e inovação aberta em grupos econômicos, articulando produção
+acadêmica e prática de consultoria (pesquisa-ação).
 
 **Papel na autoria.** Concepção metodológica, curadoria analítica e autoria dos
 relatórios. A codificação foi assistida por modelo de linguagem (Claude) e submetida
 integralmente à revisão e à decisão do autor.
 
-> Os dados de autoria estão centralizados em [`autoria.json`](autoria.json). Edite esse
-> arquivo e rode `node run_all.js` para propagar a autoria a todos os relatórios e ao
-> diagrama.
+> 💡 Os dados de autoria estão centralizados em [`autoria.json`](autoria.json). Edite
+> esse arquivo e rode `node run_all.js` para propagar a autoria a todos os relatórios
+> e ao diagrama.
 
 ---
 
-## Estrutura do repositório
+## 📦 Instalar a skill `qualitative-coding`
+
+> Este repositório inclui [`SKILL.md`](SKILL.md) — a definição completa e pronta para
+> instalar da skill de codificação qualitativa (cinco enquadramentos + saída padrão de
+> 7 entregáveis). Escolha a plataforma abaixo.
+
+<details open>
+<summary><b>🟣 Claude (Claude Code, Claude.ai / Cowork, Claude Desktop)</b></summary>
+
+**Claude Code (CLI):**
+1. Copie a pasta da skill para o diretório de skills do usuário ou do projeto:
+   ```bash
+   mkdir -p ~/.claude/skills/qualitative-coding
+   cp SKILL.md ~/.claude/skills/qualitative-coding/SKILL.md
+   # opcional, para skill de projeto (versionada com o repo):
+   mkdir -p .claude/skills/qualitative-coding && cp SKILL.md .claude/skills/qualitative-coding/SKILL.md
+   ```
+2. Reinicie a sessão do Claude Code. A skill passa a aparecer na lista de skills
+   disponíveis e é invocada automaticamente quando o pedido combinar com a
+   `description` do frontmatter (ou manualmente via `/qualitative-coding`, se o seu
+   ambiente expõe skills como comandos).
+
+**Claude.ai (Projects / Cowork) — via UI:**
+1. Acesse **Configurações → Capacidades (Skills)**.
+2. Clique em **Nova skill** e cole o conteúdo de [`SKILL.md`](SKILL.md) (mantenha o
+   bloco de frontmatter `name`/`description` no topo).
+3. Salve. A skill ficará disponível nas conversas desse projeto/workspace.
+
+</details>
+
+<details open>
+<summary><b>⚫ Codex (Codex CLI / IDE)</b></summary>
+
+1. Copie o arquivo para o diretório de skills do Codex (mesma convenção de nome de
+   pasta = nome da skill):
+   ```bash
+   mkdir -p ~/.codex/skills/qualitative-coding
+   cp SKILL.md ~/.codex/skills/qualitative-coding/SKILL.md
+   ```
+2. Se o seu projeto usa `AGENTS.md`, referencie a skill lá para reforçar quando ela
+   deve ser ativada:
+   ```md
+   ## Skills
+   - qualitative-coding: ver .codex/skills/qualitative-coding/SKILL.md — usar para
+     codificação/análise qualitativa de entrevistas e transcrições.
+   ```
+3. Reinicie a sessão do Codex. As skills carregam nativamente e são ativadas quando o
+   pedido do usuário combina com a descrição da skill.
+
+> Nomes de diretório podem variar conforme a versão do Codex CLI — confirme em
+> `codex --help` ou na documentação local se `~/.codex/skills/` não existir.
+
+</details>
+
+<details open>
+<summary><b>🔵 Manus</b></summary>
+
+1. No Manus, abra **Configurações → Conhecimento (Knowledge)** ou **Skills** (o nome
+   exato do menu pode variar conforme a versão do produto).
+2. Crie uma nova entrada/skill e cole o conteúdo de [`SKILL.md`](SKILL.md) como
+   instrução persistente — use `qualitative-coding` como nome/identificador.
+3. Associe a skill ao workspace ou tarefa relevante (ou marque como global, se
+   disponível) para que o Manus a considere automaticamente ao lidar com codificação
+   qualitativa, análise de entrevistas ou Bardin/GATOS/CollabCoder.
+4. Salve e teste com um pedido como: *"Codifique esta entrevista usando os cinco
+   enquadramentos da skill qualitative-coding."*
+
+</details>
+
+---
+
+## 🗂️ Estrutura do repositório
 
 ```
 .
+├── SKILL.md                         # 📦 definição instalável da skill (ver seção acima)
 ├── reports/                         # entregáveis finais
 │   ├── 00_Relatorio_de_Codificacao.docx
 │   ├── 01_Analise_Dedutiva.docx
@@ -70,17 +159,17 @@ integralmente à revisão e à decisão do autor.
 ├── autoria.json                     # configuração central de autoria
 ├── run_all.js                       # SAÍDA PADRÃO: gera todos os relatórios + o diagrama
 ├── package.json  ├── CITATION.cff  ├── AUTHORS.md  ├── CHANGELOG.md
-├── SKILL_PATCH.md                   # texto para atualizar a skill qualitative-coding
+├── SKILL_PATCH.md                   # histórico: texto original de patch da skill
 └── LICENSE                          # CC BY 4.0
 ```
 
-> **Nota de privacidade.** A transcrição bruta da entrevista **não** integra este
+> ⚠️ **Nota de privacidade.** A transcrição bruta da entrevista **não** integra este
 > repositório (dados do informante, anonimização conforme LGPD). Apenas trechos
 > verbatim curtos aparecem como evidência nos relatórios.
 
 ---
 
-## Reproduzir
+## ▶️ Reproduzir
 
 Pré-requisitos: Node.js ≥ 18.
 
@@ -98,7 +187,7 @@ python3 cohen_kappa.py data/irr_form_depois.csv
 
 ---
 
-## Principais resultados
+## 📊 Principais resultados
 
 - **55** unidades de registro · **37** códigos a priori · **106** atribuições de código.
 - Perfil dominante: **inovação aberta *outside-in* centrada em CVC** — códigos mais
@@ -112,7 +201,7 @@ python3 cohen_kappa.py data/irr_form_depois.csv
 
 ---
 
-## Como citar
+## 📝 Como citar
 
 ```
 Goulart, D. D. (2026). Codificação e análise qualitativa da entrevista — estudo de caso
@@ -124,12 +213,12 @@ Ver [`CITATION.cff`](CITATION.cff) para o registro estruturado.
 
 ---
 
-## Licença
+## ⚖️ Licença
 
 [CC BY 4.0](LICENSE) © 2026 Diocélio Dornela Goulart. Uso livre, inclusive comercial,
 mediante atribuição do crédito ao autor.
 
-## Transparência metodológica
+## 🔍 Transparência metodológica
 
 Relatórios produzidos com assistência de modelo de linguagem (Claude), temperatura
 0.0–0.3, **sob revisão humana de toda atribuição de código** — o LLM propõe, o

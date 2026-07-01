@@ -5,7 +5,7 @@
 // ============================================================================
 
 const META = {
-  estudo: "Estudo de caso de doutorado — Transformação digital e inovação aberta no Grupo Oscar (Acelera Ventures)",
+  estudo: "Estudo de caso da tese de doutorado (PUC Minas, defendida em agosto de 2025) — Transformação digital e inovação aberta no Grupo Oscar (Acelera Ventures)",
   fonte: "Entrevista semiestruturada com o gestor do programa de inovação aberta (codinome: Júlio), 17 perguntas, ~1h08min",
   informante: "Gestor do programa de inovação aberta (anonimizado conforme TCLE)",
   modelo: "Claude (Opus 4.x) — assistência de codificação sob revisão humana",

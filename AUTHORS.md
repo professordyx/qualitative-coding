@@ -1,7 +1,7 @@
 # Autores
 
 ## Diocélio Dornela Goulart — Autor principal
-- Doutorado em Administração (PUC Minas)
+- Doutor em Administração — PUC Minas (tese defendida em agosto de 2025)
 - Instituição de vínculo: Fundação Dom Cabral (FDC)
 - E-mail: diocelio.goulart@educ.fdc.org.br
 - ORCID: https://orcid.org/0000-0001-5423-3596

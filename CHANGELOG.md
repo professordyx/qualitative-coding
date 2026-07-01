@@ -3,6 +3,18 @@
 Todas as mudanças relevantes deste projeto são documentadas aqui.
 Formato baseado em Keep a Changelog; versionamento semântico (SemVer).
 
+## [2.1.0] — 2026-07-01
+### Adicionado
+- **Titulação corrigida.** O autor concluiu o doutorado: "Doutor em Administração —
+  PUC Minas (tese defendida em agosto de 2025)", propagado a partir de `autoria.json`
+  para todos os relatórios, `AUTHORS.md`, `CITATION.cff` e o diagrama HTML.
+- `SKILL.md` — definição instalável e autocontida da skill `qualitative-coding`
+  (consolidada a partir de `SKILL_PATCH.md`), com instruções de instalação para
+  **Claude**, **Codex** e **Manus**.
+- `README.en.md` e `README.es.md` — versões em inglês e espanhol do README, com
+  seletor de idioma, badges e identidade visual.
+- Identidade visual do README (badges, tabelas, emojis de seção, blocos `<details>`).
+
 ## [2.0.0] — 2026-07-01
 ### Mudança maior (breaking)
 Reformulação da saída da codificação qualitativa, incorporando:
