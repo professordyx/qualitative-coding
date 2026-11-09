@@ -22,6 +22,9 @@ covers deductive and inductive coding, mediation of disagreements between coders
 categorical content analysis, **code saturation**, and **intercoder reliability**, and
 generates the `.docx` reports and an `.html` diagram programmatically.
 
+It was conceived as a **research instrument** (Dr. Diocélio Dornela Goulart, Fundação
+Dom Cabral), with AI-assisted implementation (Claude).
+
 The repository contains:
 
 - **the complete skill**, in [`skill/qualitative-coding/`](skill/qualitative-coding/),
@@ -37,7 +40,7 @@ The repository contains:
 4. [Installing and updating the skill](#4-installing-and-updating-the-skill)
 5. [Demonstration case study](#5-demonstration-case-study)
 6. [Repository structure](#6-repository-structure)
-7. [Authorship, citation, and license](#7-authorship-citation-and-license)
+7. [Authorship and license](#7-authorship-and-license)
 8. [References](#8-references)
 
 ---
@@ -582,21 +585,15 @@ excerpts appear as evidence.
 └── SKILL_PATCH.md               # histórico: patch original da v2
 ```
 
-## 7. Authorship, citation, and license
+## 7. Authorship and license
 
-**Dr. Diocélio Dornela Goulart** — PhD in Business Administration (PUC Minas) · Fundação
-Dom Cabral (FDC) · [ORCID 0000-0001-5423-3596](https://orcid.org/0000-0001-5423-3596)
-· [Lattes](http://lattes.cnpq.br/5413779633365231) ·
-[LinkedIn](https://www.linkedin.com/in/diocelio/) ·
-[dioceliogoulart.com.br](https://dioceliogoulart.com.br) ·
-diocelio.goulart@educ.fdc.org.br
-
-**Authorship role.** Methodological conception, analytical curation, and authorship of
-the reports. The coding was assisted by a language model (Claude) and submitted in full
-to the author's review and decision.
-
-**How to cite:** see [`CITATION.cff`](CITATION.cff) (GitHub displays the "Cite this
-repository" button). License [CC BY 4.0](LICENSE): free use with attribution.
+Conceived and developed by **Dr. Diocélio Dornela Goulart** (Fundação Dom Cabral),
+with AI-assisted implementation (Claude). In the case study, the coding was assisted
+by a language model and submitted in full to the author's review and decision.
+License [CC BY 4.0](LICENSE): free use with attribution; how to cite in
+[`CITATION.cff`](CITATION.cff). Contact: diocelio.goulart@educ.fdc.org.br ·
+[ORCID 0000-0001-5423-3596](https://orcid.org/0000-0001-5423-3596) ·
+[Lattes](http://lattes.cnpq.br/5413779633365231).
 
 ## 8. References
 

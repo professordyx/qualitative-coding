@@ -10,7 +10,7 @@
   "cidadePais": "Belo Horizonte, MG, Brasil",
   "bio": "Diocélio Dornela Goulart atua na Fundação Dom Cabral (FDC) e é Doutor em Administração pela PUC Minas (tese defendida em agosto de 2025), com ênfase em inteligência artificial, transformação digital e modelos preditivos. Investiga transformação digital e inovação aberta em grupos econômicos, articulando produção acadêmica e prática de consultoria (pesquisa-ação).",
   "papelAutoria": "Concepção metodológica, curadoria analítica e autoria dos relatórios. A codificação foi assistida por modelo de linguagem (Claude) e submetida integralmente à revisão e à decisão do autor.",
-  "versao": "2.1.0",
+  "versao": "3.1.0",
   "licenca": "CC BY 4.0",
   "anexoObs": "Para regenerar os documentos após qualquer edição: node run_all.js"
 }

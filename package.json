@@ -2,7 +2,7 @@
   "name": "qualitative-coding",
   "version": "3.1.0",
   "description": "Codificacao e analise qualitativa (dedutivo, indutivo, GATOS, CollabCoder, Bardin) de entrevista - estudo de caso de corporate venture capital em grupo varejista.",
-  "author": "Diocelio Goulart <diocelio@bluestars.com.br>",
+  "author": "Diocélio Dornela Goulart <diocelio.goulart@educ.fdc.org.br>",
   "license": "CC-BY-4.0",
   "scripts": {
     "build": "node run_all.js"

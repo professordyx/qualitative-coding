@@ -22,6 +22,9 @@ codificação dedutiva e indutiva, mediação de divergências entre codificador
 análise de conteúdo categorial, **saturação de código** e **confiabilidade entre
 codificadores**, e gera por código os relatórios `.docx` e um diagrama `.html`.
 
+Foi concebida como **instrumento de pesquisa** (Dr. Diocélio Dornela Goulart, Fundação
+Dom Cabral), com implementação assistida por IA (Claude).
+
 O repositório contém:
 
 - **a skill completa**, em [`skill/qualitative-coding/`](skill/qualitative-coding/),
@@ -37,7 +40,7 @@ O repositório contém:
 4. [Instalação e atualização da skill](#4-instalação-e-atualização-da-skill)
 5. [Estudo de caso de demonstração](#5-estudo-de-caso-de-demonstração)
 6. [Estrutura do repositório](#6-estrutura-do-repositório)
-7. [Autoria, citação e licença](#7-autoria-citação-e-licença)
+7. [Autoria e licença](#7-autoria-e-licença)
 8. [Referências](#8-referências)
 
 ---
@@ -588,21 +591,15 @@ pseudonimizados aparecem como evidência.
 └── SKILL_PATCH.md               # histórico: patch original da v2
 ```
 
-## 7. Autoria, citação e licença
+## 7. Autoria e licença
 
-**Dr. Diocélio Dornela Goulart** — Doutor em Administração (PUC Minas) · Fundação
-Dom Cabral (FDC) · [ORCID 0000-0001-5423-3596](https://orcid.org/0000-0001-5423-3596)
-· [Lattes](http://lattes.cnpq.br/5413779633365231) ·
-[LinkedIn](https://www.linkedin.com/in/diocelio/) ·
-[dioceliogoulart.com.br](https://dioceliogoulart.com.br) ·
-diocelio.goulart@educ.fdc.org.br
-
-**Papel na autoria.** Concepção metodológica, curadoria analítica e autoria dos
-relatórios. A codificação foi assistida por modelo de linguagem (Claude) e submetida
-integralmente à revisão e à decisão do autor.
-
-**Como citar:** ver [`CITATION.cff`](CITATION.cff) (o GitHub exibe o botão "Cite this
-repository"). Licença [CC BY 4.0](LICENSE): uso livre com atribuição.
+Concebido e desenvolvido por **Dr. Diocélio Dornela Goulart** (Fundação Dom Cabral),
+com implementação assistida por IA (Claude). No estudo de caso, a codificação foi
+assistida por modelo de linguagem e submetida integralmente à revisão e à decisão do
+autor. Licença [CC BY 4.0](LICENSE): uso livre com atribuição; como citar em
+[`CITATION.cff`](CITATION.cff). Contato: diocelio.goulart@educ.fdc.org.br ·
+[ORCID 0000-0001-5423-3596](https://orcid.org/0000-0001-5423-3596) ·
+[Lattes](http://lattes.cnpq.br/5413779633365231).
 
 ## 8. Referências
 

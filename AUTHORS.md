@@ -15,4 +15,5 @@ relatórios. A codificação foi assistida por modelo de linguagem (Claude) e su
 integralmente à revisão e à decisão do autor.
 
 ---
-_Ferramenta de apoio: Claude (Anthropic) — assistência de codificação sob revisão humana._
+_Implementação assistida por IA (Claude, Anthropic): skill, scripts e documentação
+desenvolvidos sob concepção, revisão e decisão do autor._
