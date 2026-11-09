@@ -1,0 +1,16 @@
+{
+  "nomeCompleto": "Nome Completo do Autor",
+  "titulacao": "Titulação (ex.: Doutorado em Administração — Instituição)",
+  "afiliacao": "Instituição de vínculo",
+  "email": "email.institucional@dominio.org",
+  "orcid": "0000-0000-0000-0000",
+  "lattes": "http://lattes.cnpq.br/...",
+  "linkedin": "https://www.linkedin.com/in/usuario/",
+  "site": "https://seusite.com.br",
+  "cidadePais": "Cidade, UF, País",
+  "bio": "Parágrafo curto de bio do autor.",
+  "papelAutoria": "Concepção metodológica, curadoria analítica e autoria dos relatórios. A codificação foi assistida por modelo de linguagem e submetida integralmente à revisão e à decisão do autor.",
+  "versao": "1.0.0",
+  "licenca": "CC BY 4.0",
+  "anexoObs": "NUNCA incluir CPF/RG ou dados pessoais sensiveis em artefatos publicos. Regenerar apos editar: node scripts/run_all.js ../analysis.json ../autoria.json ../out"
+}

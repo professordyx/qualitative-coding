@@ -3,7 +3,7 @@
 # 🧩 Codificación y Análisis Cualitativo
 ### Acelera Ventures · Grupo Oscar
 
-[![Versión](https://img.shields.io/badge/versi%C3%B3n-2.0.0-6f42c1?style=flat-square)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/versi%C3%B3n-3.0.0-6f42c1?style=flat-square)](CHANGELOG.md)
 [![Licencia](https://img.shields.io/badge/licencia-CC%20BY%204.0-blue?style=flat-square)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%E2%89%A5%2018-339933?style=flat-square&logo=node.js&logoColor=white)](package.json)
 [![Autor](https://img.shields.io/badge/autor-Dr.%20Dioc%C3%A9lio%20Dornela%20Goulart-informational?style=flat-square)](https://orcid.org/0000-0001-5423-3596)
@@ -182,8 +182,8 @@ node run_all.js     # regenera los 6 .docx y el Diagrama_Resultados.html en repo
 Recalcular el Kappa de Cohen:
 
 ```bash
-python3 cohen_kappa.py data/irr_form_antes.csv
-python3 cohen_kappa.py data/irr_form_depois.csv
+python3 cohen_kappa.py data/irr_form_antes.csv                # confiabilidad pre-consenso
+python3 cohen_kappa.py data/irr_form_depois.csv --fase pos     # solo registro del consenso
 ```
 
 ---
@@ -196,8 +196,11 @@ python3 cohen_kappa.py data/irr_form_depois.csv
   frecuentes: *Outside-in* (14), *Forma externa* (13), *Interorganizacional* (9).
 - Concentración categorial (Bardin): *Formas y gestión de la IA* (18,9%), *Niveles de
   IA* (17,0%), *Flujos de conocimiento* (16,0%).
-- **Confiabilidad (CollabCoder):** Kappa de Cohen **0,649 → 0,961** (sustancial → casi
-  perfecta) tras el consenso; 2 divergencias genuinas quedaron a decisión humana.
+- **Confiabilidad (CollabCoder):** Kappa de Cohen pre-consenso **0,649** (sustancial);
+  alfa de Krippendorff **0,651**, por debajo de 0,667. Tras la mediación, 53 de 55 pares
+  coinciden (κ = 0,961): registro del consenso, no medida de confiabilidad. 2
+  divergencias genuinas quedaron a decisión humana. Ver la nota metodológica v3.0.0 en
+  `CHANGELOG.md`.
 - **Ausencias como hallazgo:** sin inteligencia competitiva, sin automatización/RPA,
   sin open sourcing; premios y crowdsourcing **rechazados explícitamente**.
 

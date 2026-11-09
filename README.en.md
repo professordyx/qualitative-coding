@@ -3,7 +3,7 @@
 # 🧩 Qualitative Coding and Analysis
 ### Acelera Ventures · Grupo Oscar
 
-[![Version](https://img.shields.io/badge/version-2.0.0-6f42c1?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-3.0.0-6f42c1?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-CC%20BY%204.0-blue?style=flat-square)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%E2%89%A5%2018-339933?style=flat-square&logo=node.js&logoColor=white)](package.json)
 [![Author](https://img.shields.io/badge/author-Dr.%20Dioc%C3%A9lio%20Dornela%20Goulart-informational?style=flat-square)](https://orcid.org/0000-0001-5423-3596)
@@ -180,8 +180,8 @@ node run_all.js     # regenerates the 6 .docx files and Diagrama_Resultados.html
 Recompute Cohen's Kappa:
 
 ```bash
-python3 cohen_kappa.py data/irr_form_antes.csv
-python3 cohen_kappa.py data/irr_form_depois.csv
+python3 cohen_kappa.py data/irr_form_antes.csv                # pre-consensus reliability
+python3 cohen_kappa.py data/irr_form_depois.csv --fase pos     # consensus record only
 ```
 
 ---
@@ -193,8 +193,10 @@ python3 cohen_kappa.py data/irr_form_depois.csv
   codes: *Outside-in* (14), *External form* (13), *Interorganizational* (9).
 - Categorical concentration (Bardin): *AI forms and management* (18.9%), *AI levels*
   (17.0%), *Knowledge flows* (16.0%).
-- **Reliability (CollabCoder):** Cohen's Kappa **0.649 → 0.961** (substantial →
-  almost perfect) after consensus; 2 genuine divergences left to human decision.
+- **Reliability (CollabCoder):** pre-consensus Cohen's Kappa **0.649** (substantial);
+  Krippendorff's alpha **0.651**, below 0.667. After mediation 53 of 55 pairs match
+  (κ = 0.961): a record of consensus, not a reliability measure. 2 genuine divergences
+  left to human decision. See the v3.0.0 methodological note in `CHANGELOG.md`.
 - **Absences as findings:** no competitive intelligence, no automation/RPA, no open
   sourcing; awards and crowdsourcing were **explicitly rejected**.
 

@@ -1,0 +1,5 @@
+codigo,rotulo,definicao_operacional,exemplo_ancora,categoria
+C1,Adoção tecnológica,"Menção a uso, implantação ou intenção de uso de tecnologia","passamos a usar o sistema em todas as lojas",Transformação digital
+C2,Resistência,"Recusa, ceticismo ou barreira à mudança","a equipe não confiava na ferramenta",Fatores humanos
+C3,Capacitação,"Treinamento, aprendizado ou desenvolvimento de competências","fizemos um treinamento de duas semanas",Fatores humanos
+C4,Governança de dados,"Regras, responsabilidades ou controle sobre dados","definimos quem podia acessar cada relatório",Governança

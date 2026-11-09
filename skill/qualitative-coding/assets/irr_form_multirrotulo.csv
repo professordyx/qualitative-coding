@@ -1,0 +1,9 @@
+segmento_id,texto_original,codigo_coder_A,codigo_coder_B
+S001,"passamos a usar o sistema em todas as lojas",C1,C1
+S002,"a equipe não confiava na ferramenta",C2,C2
+S003,"fizemos um treinamento antes de liberar o acesso",C3;C1,C3
+S004,"definimos quem podia ver cada relatório",C4,C4
+S005,"no começo ninguém quis mexer no aplicativo",C2,C2;C6
+S006,"o painel ajudou a decidir mais rápido",C1;C5,C5
+S007,"o ERP legado não conversa com o painel",C6,C6
+S008,"cada gerente recebeu acesso só à sua loja",C4,C4;C1

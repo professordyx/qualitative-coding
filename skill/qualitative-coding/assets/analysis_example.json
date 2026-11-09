@@ -1,0 +1,356 @@
+{
+  "_nota": "EXEMPLO FICTÍCIO — apenas para demonstrar o esquema. Substitua por seus dados reais.",
+  "meta": {
+    "estudo": "EXEMPLO — adoção de sistema em rede varejista (dados fictícios)",
+    "fonte": "Entrevista fictícia (exemplo do esquema)",
+    "informante": "Informante fictício (anonimizado)",
+    "modelo": "LLM (exemplo)",
+    "temperatura": "0.0–0.2",
+    "data": "2026-01-01",
+    "unidadeRegistro": "Turno de fala temático",
+    "projeto": "Exemplo de saída padrão — qualitative-coding v3.0.0",
+    "familia": "codebook"
+  },
+  "codebook": {
+    "1": [
+      "Adoção tecnológica",
+      "Uso, implantação ou intenção de uso de tecnologia."
+    ],
+    "2": [
+      "Resistência",
+      "Recusa, ceticismo ou barreira à mudança."
+    ],
+    "3": [
+      "Capacitação",
+      "Treinamento, aprendizado ou desenvolvimento de competências."
+    ],
+    "4": [
+      "Governança de dados",
+      "Regras, responsabilidades ou controle sobre dados."
+    ],
+    "5": [
+      "Ganho de eficiência",
+      "Produtividade ou redução de custos."
+    ],
+    "6": [
+      "Barreira técnica",
+      "Infraestrutura legada ou falta de competências técnicas."
+    ]
+  },
+  "segments": [
+    {
+      "id": "S01",
+      "t": "00:01:10",
+      "codes": [
+        1
+      ],
+      "evidencia": "“passamos a usar o sistema em todas as lojas”",
+      "confianca": 0.9,
+      "obs": "Adoção ampla."
+    },
+    {
+      "id": "S02",
+      "t": "00:02:40",
+      "codes": [
+        2
+      ],
+      "evidencia": "“a equipe não confiava na ferramenta”",
+      "confianca": 0.8,
+      "obs": "Resistência inicial."
+    },
+    {
+      "id": "S03",
+      "t": "00:04:05",
+      "codes": [
+        3,
+        1
+      ],
+      "evidencia": "“fizemos um treinamento antes de liberar o acesso”",
+      "confianca": 0.85,
+      "obs": "Capacitação como antecedente da adoção."
+    },
+    {
+      "id": "S04",
+      "t": "00:05:20",
+      "codes": [
+        4
+      ],
+      "evidencia": "“definimos quem via cada relatório”",
+      "confianca": 0.8,
+      "obs": "Governança de acesso."
+    },
+    {
+      "id": "S05",
+      "t": "00:06:30",
+      "codes": [
+        5
+      ],
+      "evidencia": "“o painel reduziu o tempo de fechamento”",
+      "confianca": 0.7,
+      "obs": "Eficiência percebida."
+    },
+    {
+      "id": "S06",
+      "t": "00:07:45",
+      "codes": [
+        6
+      ],
+      "evidencia": "“o ERP legado não integra”",
+      "confianca": 0.75,
+      "obs": "Barreira técnica."
+    }
+  ],
+  "bardin": {
+    "categorias": [
+      [
+        "A",
+        "Adoção e uso",
+        "1, 3"
+      ],
+      [
+        "B",
+        "Cultura e barreiras",
+        "2, 6"
+      ],
+      [
+        "C",
+        "Governança",
+        "4"
+      ],
+      [
+        "D",
+        "Resultados",
+        "5"
+      ]
+    ]
+  },
+  "collabcoder": {
+    "limiar": 0.7,
+    "kappa": {
+      "pre": {
+        "n": 6,
+        "conc": 5,
+        "po": 0.8333,
+        "pe": 0.2778,
+        "kappa": 0.7692,
+        "interp": "substancial",
+        "alfa": 0.7843
+      }
+    },
+    "por_codigo": [
+      {
+        "codigo": "C1",
+        "prevalencia": 0.3333,
+        "kappa": 1.0,
+        "p_pos": 1.0,
+        "p_neg": 1.0,
+        "alfa": 1.0
+      },
+      {
+        "codigo": "C2",
+        "prevalencia": 0.3333,
+        "kappa": 1.0,
+        "p_pos": 1.0,
+        "p_neg": 1.0,
+        "alfa": 1.0
+      },
+      {
+        "codigo": "C3",
+        "prevalencia": 0.0833,
+        "kappa": 0.0,
+        "p_pos": 0.0,
+        "p_neg": 0.9091,
+        "alfa": 0.0
+      },
+      {
+        "codigo": "C4",
+        "prevalencia": 0.25,
+        "kappa": 0.5714,
+        "p_pos": 0.6667,
+        "p_neg": 0.8889,
+        "alfa": 0.5926
+      }
+    ],
+    "concordancias": [
+      {
+        "tipo": "humano-humano",
+        "codificadores": "Codificador A × Codificador B",
+        "n": 6,
+        "kappa": 0.7692,
+        "alfa": 0.7843
+      }
+    ],
+    "residual": [],
+    "divergencias": [
+      [
+        "S03",
+        "3",
+        "1",
+        "Fronteira pouco clara entre categorias",
+        "3 (Capacitação como categoria principal)",
+        false
+      ]
+    ]
+  },
+  "inductive": {
+    "codigos": [
+      [
+        "IND-01",
+        "Adoção guiada por treinamento",
+        "S01, S03"
+      ],
+      [
+        "IND-02",
+        "Resistência inicial da equipe",
+        "S02"
+      ]
+    ],
+    "temas": [
+      [
+        "T1",
+        "Adoção sociotécnica",
+        "IND-01, IND-02",
+        "A adoção depende de treinamento e do enfrentamento da resistência da equipe."
+      ]
+    ]
+  },
+  "gatos": {
+    "growth": [
+      [
+        "S01",
+        1,
+        "Adoção tecnológica"
+      ],
+      [
+        "S02",
+        1,
+        "Resistência"
+      ],
+      [
+        "S03",
+        1,
+        "Capacitação"
+      ],
+      [
+        "S04",
+        1,
+        "Governança de dados"
+      ],
+      [
+        "S05",
+        1,
+        "Ganho de eficiência"
+      ],
+      [
+        "S06",
+        1,
+        "Barreira técnica"
+      ]
+    ],
+    "saturacao": "Exemplo fictício: 14 entrevistas (assets/saturacao_exemplo.csv). A curva de criação de códigos acima refere-se aos segmentos e é apenas diagnóstica.",
+    "saturacao_guest": {
+      "metodo": "Guest, Namey & Chen (2020)",
+      "unidade": "entrevista",
+      "seed": 42,
+      "resultados": [
+        {
+          "base": 4,
+          "run": 2,
+          "limiar": 0.05,
+          "observado": {
+            "s": 6,
+            "run": 2,
+            "rotulo": "6+2",
+            "razao": 0.02702702702702703,
+            "denominador": 37,
+            "grau_saturacao": 0.9166666666666666
+          },
+          "bootstrap": {
+            "iteracoes": 1000,
+            "modo": "permutacao",
+            "prop_atingiu": 0.617,
+            "mediana_s": 6,
+            "p05_s": 4.0,
+            "p95_s": 12.0,
+            "mediana_grau": 0.6458333333333334
+          }
+        },
+        {
+          "base": 4,
+          "run": 2,
+          "limiar": 0.0,
+          "observado": {
+            "s": 10,
+            "run": 2,
+            "rotulo": "10+2",
+            "razao": 0.0,
+            "denominador": 37,
+            "grau_saturacao": 0.9791666666666666
+          },
+          "bootstrap": {
+            "iteracoes": 1000,
+            "modo": "permutacao",
+            "prop_atingiu": 0.491,
+            "mediana_s": 8,
+            "p05_s": 4.0,
+            "p95_s": 12.0,
+            "mediana_grau": 0.7083333333333334
+          }
+        },
+        {
+          "base": 4,
+          "run": 3,
+          "limiar": 0.05,
+          "observado": {
+            "s": 9,
+            "run": 3,
+            "rotulo": "9+3",
+            "razao": 0.02702702702702703,
+            "denominador": 37,
+            "grau_saturacao": 0.9583333333333334
+          },
+          "bootstrap": {
+            "iteracoes": 1000,
+            "modo": "permutacao",
+            "prop_atingiu": 0.237,
+            "mediana_s": 7,
+            "p05_s": 4.0,
+            "p95_s": 11.0,
+            "mediana_grau": 0.75
+          }
+        },
+        {
+          "base": 4,
+          "run": 3,
+          "limiar": 0.0,
+          "observado": {
+            "s": 10,
+            "run": 3,
+            "rotulo": "10+3",
+            "razao": 0.0,
+            "denominador": 37,
+            "grau_saturacao": 0.9791666666666666
+          },
+          "bootstrap": {
+            "iteracoes": 1000,
+            "modo": "permutacao",
+            "prop_atingiu": 0.076,
+            "mediana_s": 7.5,
+            "p05_s": 4.0,
+            "p95_s": 11.0,
+            "mediana_grau": 0.7083333333333334
+          }
+        }
+      ]
+    },
+    "saturacao_significado": "[Exemplo] Julgamento do pesquisador sobre a compreensão das dimensões de cada código, registrado à parte."
+  },
+  "narrativas": {
+    "dedutiva": [
+      "Neste exemplo fictício, a adoção tecnológica e a capacitação predominam, seguidas de resistência e barreiras técnicas.",
+      {
+        "quote": "“fizemos um treinamento antes de liberar o acesso” (S03)"
+      }
+    ]
+  }
+}

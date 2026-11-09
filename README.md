@@ -3,7 +3,7 @@
 # 🧩 Codificação e Análise Qualitativa
 ### Acelera Ventures · Grupo Oscar
 
-[![Versão](https://img.shields.io/badge/vers%C3%A3o-2.0.0-6f42c1?style=flat-square)](CHANGELOG.md)
+[![Versão](https://img.shields.io/badge/vers%C3%A3o-3.0.0-6f42c1?style=flat-square)](CHANGELOG.md)
 [![Licença](https://img.shields.io/badge/licen%C3%A7a-CC%20BY%204.0-blue?style=flat-square)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%E2%89%A5%2018-339933?style=flat-square&logo=node.js&logoColor=white)](package.json)
 [![Autor](https://img.shields.io/badge/autor-Dr.%20Dioc%C3%A9lio%20Dornela%20Goulart-informational?style=flat-square)](https://orcid.org/0000-0001-5423-3596)
@@ -67,9 +67,11 @@ integralmente à revisão e à decisão do autor.
 
 ## 📦 Instalar a skill `qualitative-coding`
 
-> Este repositório inclui [`SKILL.md`](SKILL.md) — a definição completa e pronta para
-> instalar da skill de codificação qualitativa (cinco enquadramentos + saída padrão de
-> 7 entregáveis). Escolha a plataforma abaixo.
+> Este repositório inclui [`SKILL.md`](SKILL.md) — a definição da skill de codificação
+> qualitativa — e, em [`skill/qualitative-coding/`](skill/qualitative-coding/), o
+> **pacote completo v3.0.0** (prompts, modelos, `cohen_kappa.py`, `saturation.py` e
+> geradores de relatórios). Para instalar com scripts, copie a pasta inteira:
+> `cp -r skill/qualitative-coding ~/.claude/skills/`. Escolha a plataforma abaixo.
 
 <details open>
 <summary><b>🟣 Claude (Claude Code, Claude.ai / Cowork, Claude Desktop)</b></summary>
@@ -141,6 +143,7 @@ integralmente à revisão e à decisão do autor.
 ```
 .
 ├── SKILL.md                         # 📦 definição instalável da skill (ver seção acima)
+├── skill/qualitative-coding/        # 📦 pacote completo v3.0.0 (prompts, assets, scripts)
 ├── reports/                         # entregáveis finais
 │   ├── 00_Relatorio_de_Codificacao.docx
 │   ├── 01_Analise_Dedutiva.docx
@@ -178,11 +181,12 @@ npm install         # instala a dependência 'docx'
 node run_all.js     # regenera os 6 .docx e o Diagrama_Resultados.html em reports/
 ```
 
-Recalcular o Kappa de Cohen:
+Recalcular a confiabilidade (pré-consenso — a única medida de confiabilidade):
 
 ```bash
 python3 cohen_kappa.py data/irr_form_antes.csv
-python3 cohen_kappa.py data/irr_form_depois.csv
+# registro do consenso (não é medida de confiabilidade):
+python3 cohen_kappa.py data/irr_form_depois.csv --fase pos
 ```
 
 ---
@@ -194,8 +198,19 @@ python3 cohen_kappa.py data/irr_form_depois.csv
   frequentes: *Outside-in* (14), *Forma Externa* (13), *Interorganizacional* (9).
 - Concentração categorial (Bardin): *Formas e gestão da IA* (18,9%), *Níveis de IA*
   (17,0%), *Fluxos de conhecimento* (16,0%).
-- **Confiabilidade (CollabCoder):** Kappa de Cohen **0,649 → 0,961** (substancial →
-  quase perfeita) após consenso; 2 divergências genuínas a decisão humana.
+- **Confiabilidade (CollabCoder):** Kappa de Cohen pré-consenso **0,649** (substancial,
+  Landis & Koch, 1977); alfa de Krippendorff **0,651**, abaixo de 0,667 (Krippendorff,
+  2004). Após a mediação, 53 de 55 pares coincidem (κ = 0,961): registro do consenso,
+  não medida de confiabilidade. 2 divergências genuínas a decisão humana.
+
+> 🔎 **Nota metodológica (v3.0.0).** Os relatórios em `reports/` foram produzidos com a
+> skill v2.0.0. Três ajustes da v3.0.0 afetam sua leitura: (1) a análise indutiva é
+> descrita como "análise temática reflexiva", mas o estudo usa dupla codificação e
+> kappa — procedimentos que Braun e Clarke (2021) associam à abordagem de
+> confiabilidade de codificação, não à reflexiva; (2) o kappa pós-consenso (0,961) não
+> mede confiabilidade; (3) o controle de saturação por "N unidades consecutivas" foi
+> substituído pelo método de Guest, Namey e Chen (2020), com a entrevista como unidade,
+> que não se aplica a uma entrevista única. Ver [`CHANGELOG.md`](CHANGELOG.md).
 - **Ausências como achado:** sem inteligência competitiva, sem automação/RPA, sem open
   sourcing; prêmios e crowdsourcing **recusados explicitamente**.
 
