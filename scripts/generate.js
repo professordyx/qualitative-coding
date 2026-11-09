@@ -28,7 +28,7 @@ function autoriaBlock(width) {
     H1("Autoria e créditos"),
     P(`Autoria de **${A.nomeCompleto}**. ${A.papelAutoria}`),
     metaTable(pares, width),
-    P(`**Como citar:** ${A.nomeCompleto} (${YEAR}). Codificação e análise qualitativa da entrevista — estudo de caso Acelera Ventures / Grupo Oscar (transformação digital e inovação aberta). Relatório de pesquisa. Licenciado sob ${A.licenca}. Contato: ${A.email}.`),
+    P(`**Como citar:** ${A.nomeCompleto} (${YEAR}). Codificação e análise qualitativa da entrevista — estudo de caso de corporate venture capital em grupo varejista (transformação digital e inovação aberta). Relatório de pesquisa. Licenciado sob ${A.licenca}. Contato: ${A.email}.`),
   ];
 }
 
@@ -73,7 +73,7 @@ async function relatorioCodificacao() {
 
   const children = [
     TITLE("Relatório de Codificação"),
-    SUB("Codificação qualitativa assistida por LLM — Entrevista Acelera Ventures / Grupo Oscar"),
+    SUB("Codificação qualitativa assistida por LLM — Entrevista programa de CVC / grupo varejista"),
     metaTable([
       ["Estudo", D.META.estudo],
       ["Fonte", D.META.fonte],
@@ -87,7 +87,7 @@ async function relatorioCodificacao() {
 
     ...autoriaBlock(13680),
     H1("1. Apresentação e governança"),
-    P("Este relatório consolida a codificação da entrevista com o gestor do programa de inovação aberta do Grupo Oscar (Acelera Ventures). A codificação operacionaliza a análise de conteúdo dirigida (Bardin, 2011) e a aplicação de codebook teórico (Saldaña, 2021), com o LLM atuando como codificador auxiliar e o pesquisador no comando da decisão final. Antes do processamento, foram verificadas as pré-condições de governança: anonimização do informante (LGPD), cobertura do uso de IA pelo TCLE, registro de parâmetros e revisão humana obrigatória."),
+    P("Este relatório consolida a codificação da entrevista com o gestor do programa de inovação aberta de um grupo econômico do varejo (programa de corporate venture capital). A codificação operacionaliza a análise de conteúdo dirigida (Bardin, 2011) e a aplicação de codebook teórico (Saldaña, 2021), com o LLM atuando como codificador auxiliar e o pesquisador no comando da decisão final. Antes do processamento, foram verificadas as pré-condições de governança: anonimização do informante (LGPD), cobertura do uso de IA pelo TCLE, registro de parâmetros e revisão humana obrigatória."),
     P("A mesma matriz de codificação serve de base para os cinco enquadramentos analíticos entregues em separado: dedutivo, indutivo, GATOS, CollabCoder e Bardin."),
 
     H1("2. Procedimento de segmentação"),
@@ -118,7 +118,7 @@ async function relatorioCodificacao() {
     H1("7. Referências"),
     ...refs([R.bardin, R.katz, R.morgan, R.saldana]),
   ];
-  return save(build(children, { landscape: true, footerLabel: "Relatório de Codificação — Acelera Ventures · Diocélio Goulart" }),
+  return save(build(children, { landscape: true, footerLabel: "Relatório de Codificação — Estudo de caso CVC · Diocélio Goulart" }),
     `${OUT}/00_Relatorio_de_Codificacao.docx`);
 }
 
@@ -171,7 +171,7 @@ async function analiseDedutiva() {
     H1("Referências"),
     ...refs([R.bardin, R.chesbrough, R.katz, R.morgan, R.saldana, R.vial]),
   ];
-  return save(build(children, { footerLabel: "Análise Dedutiva — Acelera Ventures · Diocélio Goulart" }),
+  return save(build(children, { footerLabel: "Análise Dedutiva — Estudo de caso CVC · Diocélio Goulart" }),
     `${OUT}/01_Analise_Dedutiva.docx`);
 }
 
@@ -203,21 +203,21 @@ async function analiseIndutiva() {
     H1("4. Narrativa interpretativa"),
     H2("T1 — O grupo econômico como ativo de atração e validação"),
     P("O traço mais original do caso não é o capital, mas a **relevância do grupo varejista** como recurso de inovação. O gestor inverte a proposta de valor usual do venture: oferece mercado, ‘case’ e portas abertas, não cheque. Isso reposiciona o CVC como um investidor de valor agregado."),
-    QUOTE("“me torno atraente para as startups… contrato a sexta etapa e, ao mesmo tempo, o Grupo Oscar gera um case… ir para o mercado com mais robustez.” (S02)"),
+    QUOTE("“me torno atraente para as startups… contrato a sexta etapa e, ao mesmo tempo, o [Grupo Varejista] gera um case… ir para o mercado com mais robustez.” (S02)"),
 
     H2("T2 — Arquitetura operacional da inovação aberta"),
     P("A prática se organiza num funil replicável (tema → divulgação → screening → POC → contratação/investimento) e num arranjo de **consórcio entre varejistas não concorrentes** que rateia o custo da inovação. A captação evita fundo estruturado, combinando capital próprio e co-investimento de family offices."),
     QUOTE("“juntamos quatro varejistas… atraímos 73 startups… 11 POCs, no final 9 concretizaram.” (S29)"),
 
     H2("T3 — Da POC ao produto: incubação e spin-off"),
-    P("Produtos nascem como POC dentro do cliente (Oscar) e amadurecem rumo a spin-off; mesmo parcerias fracassadas deixam ativos reaproveitáveis — o código-fonte vira patrimônio do grupo."),
-    QUOTE("“a ideia é que ele vire um spin-off… que ele nasça dentro ali, da Editamos… encapsule num produto.” (S11)"),
+    P("Produtos nascem como POC dentro do cliente ([Grupo Varejista]) e amadurecem rumo a spin-off; mesmo parcerias fracassadas deixam ativos reaproveitáveis — o código-fonte vira patrimônio do grupo."),
+    QUOTE("“a ideia é que ele vire um spin-off… que ele nasça dentro ali, da [Empresa Investida]… encapsule num produto.” (S11)"),
 
     H2("T4 — Governança e gestão do portfólio"),
     P("A governança escala com o grau de participação (de report leve, no mútuo conversível, a conselho e acordo de acionistas, na sociedade). O programa recusa deliberadamente prêmios e crowdsourcing, sinalizando preferência por equity e cooperação direta."),
 
     H2("T5 — Capacidades e ecossistema"),
-    P("Cultura, apoio da alta gestão e competências dos sócios (Dom Cabral, Trinceda, design/ágil) sustentam a inovação aberta. O laço com o ecossistema regional de C&T (universidades, parque tecnológico), porém, ainda é frágil e não estruturado."),
+    P("Cultura, apoio da alta gestão e competências dos sócios ([Escola de Negócios], [Consultoria Parceira], design/ágil) sustentam a inovação aberta. O laço com o ecossistema regional de C&T (universidades, parque tecnológico), porém, ainda é frágil e não estruturado."),
     QUOTE("“percebi que há alguma dificuldade… de uma corporate se estabelecer [no Parque Tecnológico]… A região é extremamente industrial.” (S50)"),
 
     H1("5. Convergência com a via dedutiva"),
@@ -229,7 +229,7 @@ async function analiseIndutiva() {
     H1("Referências"),
     ...refs([R.braun, R.morgan, R.saldana]),
   ];
-  return save(build(children, { footerLabel: "Análise Indutiva — Acelera Ventures · Diocélio Goulart" }),
+  return save(build(children, { footerLabel: "Análise Indutiva — Estudo de caso CVC · Diocélio Goulart" }),
     `${OUT}/02_Analise_Indutiva.docx`);
 }
 
@@ -273,7 +273,7 @@ async function analiseGatos() {
     H1("Referências"),
     ...refs([R.katz, R.morgan, R.saldana]),
   ];
-  return save(build(children, { footerLabel: "Análise GATOS — Acelera Ventures · Diocélio Goulart" }),
+  return save(build(children, { footerLabel: "Análise GATOS — Estudo de caso CVC · Diocélio Goulart" }),
     `${OUT}/03_Analise_GATOS.docx`);
 }
 
@@ -332,7 +332,7 @@ async function analiseCollab() {
     H1("Referências"),
     ...refs([R.cohen, R.gao, R.landis, R.saldana]),
   ];
-  return save(build(children, { footerLabel: "Análise CollabCoder — Acelera Ventures · Diocélio Goulart" }),
+  return save(build(children, { footerLabel: "Análise CollabCoder — Estudo de caso CVC · Diocélio Goulart" }),
     `${OUT}/04_Analise_CollabCoder.docx`);
 }
 
@@ -388,7 +388,7 @@ async function analiseBardin() {
     H1("Referências"),
     ...refs([R.bardin, R.chesbrough, R.saldana, R.vial]),
   ];
-  return save(build(children, { footerLabel: "Análise de Conteúdo (Bardin) — Acelera Ventures · Diocélio Goulart" }),
+  return save(build(children, { footerLabel: "Análise de Conteúdo (Bardin) — Estudo de caso CVC · Diocélio Goulart" }),
     `${OUT}/05_Analise_Bardin.docx`);
 }
 function bar(frac) {

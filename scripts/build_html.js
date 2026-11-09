@@ -31,7 +31,7 @@ const html = `<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Diagrama de Resultados — Codificação Qualitativa | Acelera Ventures</title>
+<title>Diagrama de Resultados — Codificação Qualitativa | Estudo de caso CVC</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 :root{
@@ -121,7 +121,7 @@ h3.section{max-width:1180px;margin:30px auto 12px;padding:0 22px;color:var(--acc
 <body>
 <header class="top"><div class="wrap">
   <div class="kick">Codificação qualitativa assistida por LLM · Estudo de caso da tese de doutorado (PUC Minas, ago/2025)</div>
-  <h1>Resultados da Codificação — Acelera Ventures / Grupo Oscar</h1>
+  <h1>Resultados da Codificação — programa de CVC / grupo varejista</h1>
   <p>Transformação digital e inovação aberta · Entrevista com o gestor do programa (anonimizado) · Cinco enquadramentos: Dedutivo, Indutivo, GATOS, CollabCoder e Bardin.</p>
   <p style="margin-top:10px;font-size:14px"><b>Autoria:</b> ${A.nomeCompleto} · ${A.titulacao} · <a href="mailto:${A.email}" style="color:#dbe8f6">${A.email}</a></p>
   <div class="tagrow">
@@ -165,7 +165,7 @@ h3.section{max-width:1180px;margin:30px auto 12px;padding:0 22px;color:var(--acc
           <div class="muted" style="font-size:12px;text-align:center">conhecimento que <b>entra</b></div>
         </div>
         <div class="arrow">➜</div>
-        <div class="org"><b>Grupo Oscar<br>/ Acelera</b><div style="font-size:12px;opacity:.9;margin-top:4px">CVC de varejo</div></div>
+        <div class="org"><b>Grupo varejista<br>/ programa CVC</b><div style="font-size:12px;opacity:.9;margin-top:4px">CVC de varejo</div></div>
       </div>
       <div class="flow" style="margin-top:14px">
         <div class="side">
@@ -244,7 +244,7 @@ h3.section{max-width:1180px;margin:30px auto 12px;padding:0 22px;color:var(--acc
 </main>
 
 <footer>
-  <b>Autoria e créditos.</b> ${A.nomeCompleto} — ${A.titulacao}. ${A.papelAutoria} Contato: <a href="mailto:${A.email}">${A.email}</a>${A.orcid && !A.orcid.includes('PREENCHER') ? ' · ORCID: '+A.orcid : ''}. Licença: ${A.licenca} · © ${YEAR} ${A.nomeCompleto}. <b>Como citar:</b> ${A.nomeCompleto} (${YEAR}). Codificação e análise qualitativa da entrevista — estudo de caso Acelera Ventures / Grupo Oscar. Relatório de pesquisa, sob ${A.licenca}.
+  <b>Autoria e créditos.</b> ${A.nomeCompleto} — ${A.titulacao}. ${A.papelAutoria} Contato: <a href="mailto:${A.email}">${A.email}</a>${A.orcid && !A.orcid.includes('PREENCHER') ? ' · ORCID: '+A.orcid : ''}. Licença: ${A.licenca} · © ${YEAR} ${A.nomeCompleto}. <b>Como citar:</b> ${A.nomeCompleto} (${YEAR}). Codificação e análise qualitativa da entrevista — estudo de caso de corporate venture capital em grupo varejista. Relatório de pesquisa, sob ${A.licenca}.
   <br><br>
   <b>Transparência metodológica.</b> Produzido com assistência de ${DATA.meta.modelo}, temperatura ${DATA.meta.temperatura}, sob revisão humana de toda atribuição. Anonimização conforme LGPD; uso de IA coberto pelo TCLE. A concordância humano–LLM não substitui a concordância entre dois pesquisadores humanos; recomenda-se replicar a dupla codificação na versão final da tese. Limitações: risco de alucinação/inversão indutiva (Morgan, 2023) e perda de nuance no agrupamento (Katz et al., 2024).
   <div class="refs">

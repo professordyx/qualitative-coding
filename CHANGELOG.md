@@ -3,6 +3,21 @@
 Todas as mudanças relevantes deste projeto são documentadas aqui.
 Formato baseado em Keep a Changelog; versionamento semântico (SemVer).
 
+## [3.1.0] — 2026-11-09
+### Documentação e anonimização
+- **README reescrito** (PT, EN, ES): fundamentação teórica completa (famílias
+  epistemológicas, codificação, Bardin, GATOS, CollabCoder, saturação,
+  confiabilidade e particularidades dos LLMs) e configuração detalhada dos scripts
+  (opções, formatos de entrada, `analysis.json`, `autoria.json`, saídas).
+- **Instalação e atualização** da skill no Claude (claude.ai) e no Claude Code,
+  conforme a documentação oficial.
+- **`GUIA.md` na skill**, gerado do README por `tools/sync_guia.py`.
+- **Pseudonimização do estudo de caso:** nomes da empresa, do programa e de terceiros
+  substituídos por rótulos entre colchetes em dados, scripts, metadados, `LICENSE`,
+  `CITATION.cff`, `package.json` e relatórios regenerados. O texto analítico e os
+  códigos não mudaram (κ pré-consenso = 0,649; α = 0,651).
+- Referência de Morgan (2023) corrigida (DOI conferido).
+
 ## [3.0.0] — 2026-11-09
 ### Revisão metodológica da skill `qualitative-coding`
 - **Pacote completo da skill** em `skill/qualitative-coding/` (prompts, assets,

@@ -1,6 +1,6 @@
 ---
 name: qualitative-coding
-version: 3.0.0
+version: 3.1.0
 description: Codificação e categorização qualitativa assistida por LLM em Administração e Ciências Sociais Aplicadas, com rigor, auditabilidade e governança. Use para 'codificar entrevistas', 'codificar grupo focal', 'codificação aberta/axial/seletiva', 'análise temática', 'análise de conteúdo', 'construir codebook', 'categorizar respostas abertas', 'codificação dedutiva', 'codificação indutiva', 'concordância entre codificadores', 'inter-rater reliability', 'Kappa de Cohen', 'alfa de Krippendorff', 'saturação', ou ao enviar transcrições pedindo análise qualitativa. Operacionaliza GATOS (Katz et al., 2024), CollabCoder (Gao et al., 2024), Bardin (2011), Braun & Clarke (2006, 2021) e Saldaña (2021); saturação de código por Guest et al. (2020). Exige declarar a família epistemológica antes de calcular kappa ou saturação. Gera por código relatórios .docx e diagrama HTML com autoria (CC BY 4.0). Suporta PT, ES e EN. Não use para análise estatística de dados numéricos nem para revisão de literatura.
 ---
 
@@ -208,6 +208,9 @@ Bloco pronto para a seção de método, contendo:
 
 ## 9. Arquivos
 
+- `GUIA.md` — **(v3.1.0)** fundamentação teórica completa e configuração detalhada dos
+  scripts (opções, formatos de entrada, `analysis.json`, `autoria.json`). Consulte-o
+  quando o usuário pedir explicação do método ou ajuda para configurar os scripts.
 - `prompts/deductive_coding.md`, `prompts/inductive_coding.md`,
   `prompts/reconcile_irr.md`, `prompts/content_analysis.md` — prompts dos quatro fluxos.
 - `assets/codebook_template.csv`, `assets/irr_form.csv`,
@@ -264,6 +267,11 @@ Saldaña, J. (2021). *The coding manual for qualitative researchers* (4th ed.). 
 ---
 
 ## CHANGELOG
+
+### [3.1.0] — 2026-11-09
+- `GUIA.md`: teoria (famílias epistemológicas, codificação, Bardin, GATOS, CollabCoder,
+  saturação, confiabilidade, particularidades dos LLMs) e configuração dos scripts.
+- Referência de Morgan (2023) corrigida nos relatórios (DOI conferido).
 
 ### [3.0.0] — 2026-11-09 — revisão metodológica
 - §3: declaração obrigatória da **família epistemológica** (`meta.familia`); na

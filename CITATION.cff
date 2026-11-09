@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Se você usar este material, por favor cite-o como abaixo."
-title: "Codificação e análise qualitativa da entrevista — estudo de caso Acelera Ventures / Grupo Oscar (transformação digital e inovação aberta)"
+title: "Codificação e análise qualitativa da entrevista — estudo de caso de corporate venture capital em grupo varejista (transformação digital e inovação aberta)"
 abstract: >-
   Codificação qualitativa assistida por LLM (com revisão humana) de uma entrevista
   semiestruturada, aplicando cinco enquadramentos — dedutivo, indutivo, GATOS,
@@ -16,7 +16,7 @@ authors:
     city: "Belo Horizonte"
     region: "MG"
     country: "BR"
-version: "3.0.0"
+version: "3.1.0"
 date-released: "2026-11-09"
 license: "CC-BY-4.0"
 url: "https://dioceliogoulart.com.br"
